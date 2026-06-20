@@ -1,0 +1,16 @@
+{
+  "name": "nexus-command-center",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/frontend"
+  ],
+  "scripts": {
+    "dev": "npm --workspace apps/frontend run dev",
+    "build": "npm --workspace apps/frontend run build",
+    "lint": "npm --workspace apps/frontend run lint",
+    "typecheck": "npm --workspace apps/frontend run typecheck",
+    "preview": "npm --workspace apps/frontend run preview"
+  }
+}
+
