@@ -12,7 +12,7 @@ His strongest portfolio direction is practical product engineering: building int
 Adnan's projects show an interest in system boundaries:
 
 - Separating Python NLP workloads from Node.js product APIs in Trackr.
-- Separating on-chain voting actions from off-chain metadata in the Decentralized Voting System.
+- Separating on-chain voting actions from off-chain metadata in DigiVote.
 - Using PostgreSQL with Sequelize for Users, Sessions, and Reports in VJIT Sports Scheduler while enforcing role-aware routes with Passport.js and CSRF protection.
 
 ## Values

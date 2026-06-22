@@ -181,7 +181,7 @@ class RagService:
 
         if "trackr" in question and "trackr" in source:
             boost += 1.0
-        if "voting" in question and "voting" in source:
+        if ("voting" in question or "digivote" in question) and "digivote" in source:
             boost += 1.0
         if ("scheduler" in question or "vjit" in question) and "vjit" in source:
             boost += 1.0
@@ -262,8 +262,8 @@ class RagService:
             return "Adnan's value proposition"
         if "trackr" in lowered:
             return "Trackr"
-        if "voting" in lowered:
-            return "the Decentralized Voting System"
+        if "voting" in lowered or "digivote" in lowered:
+            return "DigiVote"
         if "cloud" in lowered or "aws" in lowered:
             return "Adnan's cloud learning path"
         if "role" in lowered or "seeking" in lowered:

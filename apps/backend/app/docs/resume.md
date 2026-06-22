@@ -12,7 +12,7 @@ He is strongest when working across product UI, backend APIs, databases, and AI/
 Recruiters should evaluate Adnan through three signals:
 
 1. Trackr demonstrates a three-tier MERN application with JWT authentication, CRUD workflows, dashboard analytics, MongoDB/Mongoose modeling, and a separate FastAPI resume-matching service.
-2. The Decentralized Voting System demonstrates blockchain fundamentals, Solidity smart contracts, and wallet-based authentication.
+2. DigiVote (Blockchain-based Decentralized Voting System) demonstrates blockchain fundamentals, Solidity smart contracts, and wallet-based authentication.
 3. VJIT Sports Scheduler demonstrates role-based server-rendered application design, Passport.js authentication, CSRF protection, PostgreSQL/Sequelize modeling, and participation reporting.
 
 ## Availability

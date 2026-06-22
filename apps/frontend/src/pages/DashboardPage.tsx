@@ -20,27 +20,31 @@ import {
 
 const stats = [
   {
-    label: "AI-Powered Projects",
+    label: "Portfolio Projects",
     value: "3",
-    description: "Focused builds across AI, blockchain, and operations workflows.",
+    description: "Full-stack, AI-integrated, and blockchain builds with complete engineering documentation.",
   },
   {
     label: "Technologies Used",
-    value: "12+",
-    description: "Modern full stack tools across frontend, backend, database, and AI.",
+    value: "33+",
+    description: "Verified across frontend, backend, database, AI/NLP, and blockchain layers.",
   },
   {
-    label: "Currently Learning",
-    value: "AWS Solutions Architect",
-    description: "Cloud architecture, deployment patterns, and resilient system design.",
+    label: "Currently Pursuing",
+    value: "AWS SAA-C03",
+    description: "Cloud architecture, IAM, compute, storage, and resilient system design.",
   },
 ];
 
+// Skill tiers are based on verified project usage — no percentage estimates.
+// "Built in projects" = used across 2+ documented projects.
+// "Implemented" = used in at least one documented project with real code.
+// "Actively studying" = in progress, not yet in a shipped project.
 const skills = [
-  { label: "React + TypeScript", value: 88, tone: "bg-primary" },
-  { label: "FastAPI + PostgreSQL", value: 78, tone: "bg-ai" },
-  { label: "AI Product Workflows", value: 74, tone: "bg-success" },
-  { label: "AWS Solutions Architect", value: 42, tone: "bg-amber" },
+  { label: "Full-Stack Engineering (Node.js · Express · React · FastAPI)", tier: "Built across 3 projects", width: 88, tone: "bg-primary" },
+  { label: "Auth & Security (Passport.js · JWT · bcrypt · CSRF)", tier: "Implemented in 2 projects", width: 76, tone: "bg-ai" },
+  { label: "AI / NLP Integration (TF-IDF · Cosine Similarity · RAG)", tier: "Implemented in Trackr & NEXUS", width: 70, tone: "bg-success" },
+  { label: "AWS Cloud Architecture (SAA-C03)", tier: "Actively studying", width: 38, tone: "bg-amber" },
 ];
 
 export function DashboardPage() {
@@ -48,12 +52,12 @@ export function DashboardPage() {
     <motion.div className="space-y-10" variants={listStagger} initial="initial" animate="animate">
       <motion.section className="grid gap-8 py-4 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start lg:gap-10 lg:py-8" variants={softReveal}>
         <motion.div className="max-w-4xl" variants={softReveal}>
-          <StatusPill label="Open to International Opportunities" location="Remote" />
+          <StatusPill label="Open to Relocation · Dubai, UAE" location="IT / Cloud / DevOps" />
           <div className="mt-8">
             <SectionHeader
               label="Developer Intelligence Activated"
-              title="Adnan Ahmed Bhameshan builds AI-ready full stack products."
-              description="A command center for evaluating product judgment, engineering range, and project execution."
+              title="Adnan Ahmed Bhameshan — Full-Stack & Cloud-Focused Engineer."
+              description="Targeting IT Support, Cloud Support, System Administration, and Junior DevOps roles in Dubai. AWS SAA-C03 in progress."
             />
           </div>
         </motion.div>
@@ -138,14 +142,14 @@ export function DashboardPage() {
         <Card className="grid gap-5 p-5" interactive>
           {skills.map((skill) => (
             <div key={skill.label}>
-              <div className="flex items-center justify-between gap-4">
+              <div className="flex items-start justify-between gap-4">
                 <p className="text-sm font-medium text-text-primary">{skill.label}</p>
-                <span className="font-mono text-xs text-text-tertiary">{skill.value}%</span>
+                <span className="shrink-0 font-mono text-xs text-text-tertiary">{skill.tier}</span>
               </div>
               <div className="mt-2 h-2 overflow-hidden rounded-full bg-elevated">
                 <motion.div
                   className={`h-full origin-left rounded-full ${skill.tone}`}
-                  style={{ width: `${skill.value}%` }}
+                  style={{ width: `${skill.width}%` }}
                   variants={progressFill}
                 />
               </div>
@@ -158,8 +162,10 @@ export function DashboardPage() {
         <Card className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between" interactive>
           <div>
             <p className="font-mono text-xs uppercase text-ai">NEXUS AI</p>
-            <h2 className="mt-2 font-display text-xl font-bold">Assistant foundation ready</h2>
-            <p className="mt-1 text-sm text-text-secondary">RAG implementation is planned for the next phase.</p>
+            <h2 className="mt-2 font-display text-xl font-bold">AI Assistant — live</h2>
+            <p className="mt-1 text-sm text-text-secondary">
+              RAG-powered retrieval over the full project knowledge base. Ask anything about the portfolio, tech stack, or career goals.
+            </p>
           </div>
           <ButtonLink variant="ai" to="/assistant">
             <Bot aria-hidden="true" className="h-4 w-4" />

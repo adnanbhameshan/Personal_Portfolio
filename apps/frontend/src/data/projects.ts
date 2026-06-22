@@ -201,22 +201,22 @@ const projectData = [
     },
   },
   {
-    slug: "voting",
-    name: "Decentralized Voting System",
-    eyebrow: "Blockchain application",
+    slug: "digivote",
+    name: "DigiVote",
+    eyebrow: "Blockchain-based Decentralized Voting System",
     summary:
       "Ethereum voting platform using Solidity smart contracts, MetaMask wallet authentication, and MongoDB for off-chain metadata.",
     status: "complete",
     accent: "rose",
     tech: ["React", "Solidity", "Ethereum", "Hardhat/Truffle", "Web3.js", "Node.js", "MongoDB", "MetaMask"],
     impact: "Demonstrates trust-minimized voting flows with on-chain vote records and off-chain election metadata.",
-    href: "/projects/voting",
+    href: "/projects/digivote",
     category: "Blockchain",
     priority: 2,
     todoVerify: ["Confirm whether Hardhat, Truffle, or both were used.", "Confirm GitHub repository URL.", "Confirm live demo URL."],
     details: {
       shortDescription:
-        "A decentralized voting application where critical vote actions are represented as Ethereum smart contract interactions.",
+        "DigiVote is a blockchain-based decentralized voting application where critical vote actions are represented as Ethereum smart contract interactions.",
       problem: [
         "Traditional voting applications require users to trust a central server and database operator.",
         "Vote records are sensitive and need stronger guarantees around immutability and public verifiability.",

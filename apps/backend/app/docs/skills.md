@@ -14,7 +14,7 @@ Trackr uses Node.js and Express.js for its main application backend and a separa
 ## Databases
 Verified database technologies include MongoDB and PostgreSQL.
 
-MongoDB is used in Trackr and the Decentralized Voting System. PostgreSQL with Sequelize is used in VJIT Sports Scheduler.
+MongoDB is used in Trackr and DigiVote. PostgreSQL with Sequelize is used in VJIT Sports Scheduler.
 
 ## Authentication and Application Security
 Trackr uses JWT and bcryptjs. VJIT Sports Scheduler uses Passport.js local strategy, bcrypt, CSRF protection, connect-flash, and route-level role checks.
@@ -25,7 +25,7 @@ Trackr uses Python, TF-IDF Vectorization, and Cosine Similarity for resume-to-jo
 Adnan is also building NEXUS around RAG architecture, embeddings, pgvector, and OpenAI-compatible APIs.
 
 ## Blockchain
-The Decentralized Voting System uses Solidity, Ethereum, MetaMask, and Web3.js. The project spec mentions Hardhat/Truffle, but the exact framework should be verified.
+DigiVote (Blockchain-based Decentralized Voting System) uses Solidity, Ethereum, MetaMask, and Web3.js. The project spec mentions Hardhat/Truffle, but the exact framework should be verified.
 
 TODO_VERIFY:
-Confirm whether Hardhat, Truffle, or both were used in the voting project.
+Confirm whether Hardhat, Truffle, or both were used in the DigiVote project.

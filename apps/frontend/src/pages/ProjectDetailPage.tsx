@@ -148,7 +148,7 @@ export function ProjectDetailPage() {
 
       {project.details.workflow ? (
         <motion.section variants={cardEntrance}>
-          <ProjectSection eyebrow="Workflow" title={project.slug === "voting" ? "Smart contract and authentication flow" : "Core product workflow"}>
+          <ProjectSection eyebrow="Workflow" title={project.slug === "digivote" ? "Smart contract and authentication flow" : "Core product workflow"}>
             <Card className="p-5">
               <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
                 {project.details.workflow.map((step, index) => (
