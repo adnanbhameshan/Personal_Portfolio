@@ -26,6 +26,10 @@ NLP service: FastAPI, Python, TF-IDF Vectorization, and Cosine Similarity.
 
 Deployment: Vercel for the frontend, Render for the backend, and MongoDB Atlas for the database.
 
+GitHub repository: https://github.com/adnanbhameshan/Trackr-a-job-analyzer
+
+Live frontend: https://job-analyzer-blue.vercel.app
+
 ## Authentication Flow
 Trackr uses JWT for stateless authentication.
 
@@ -76,8 +80,4 @@ The FastAPI NLP layer is separate from the Express application backend so AI ope
 - Automatic job scraping from LinkedIn and Naukri
 - Email alerts and reminders
 - OAuth through Google or LinkedIn
-
-TODO_VERIFY:
-Confirm GitHub repository URL.
-Confirm live demo URL.
 

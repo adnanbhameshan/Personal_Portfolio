@@ -9,12 +9,14 @@ DigiVote is a blockchain-based decentralized voting system built on Ethereum usi
 It eliminates centralized trust requirements by storing critical vote actions on-chain, making vote records immutable and publicly verifiable.
 
 ## Verified Stack
-The project uses React, Solidity, Ethereum, Web3.js, Node.js, MongoDB, and MetaMask.
+The project uses React, Solidity, Ethereum, Truffle, Web3.js, Node.js, MongoDB, and MetaMask.
 
-The product spec mentions Hardhat/Truffle, but the exact framework should be verified.
+GitHub repository: https://github.com/adnanbhameshan/DigiVote-a-voting-platform
+
+DigiVote was not deployed as a public live demo. It was tested in a controlled college environment using a local Ethereum network.
 
 ## Architecture
-Voter Browser with MetaMask -> React Frontend -> Ethereum Network -> Solidity Smart Contract -> MongoDB Backend.
+Voter Browser with MetaMask -> React Frontend -> Ethereum Network -> Solidity Smart Contract developed and tested with Truffle -> MongoDB Backend.
 
 The smart contract handles critical operations such as castVote(), getResults(), and verifyVoter().
 
@@ -31,7 +33,5 @@ Not every piece of data belongs on-chain. Candidate profiles and election config
 ## Lessons
 The project demonstrates smart contract boundaries, wallet authentication UX, and the tradeoff between on-chain trust and off-chain practicality.
 
-TODO_VERIFY:
-Confirm whether Hardhat, Truffle, or both were used.
-Confirm GitHub repository URL.
-Confirm live demo URL.
+## Screenshots
+The available screenshots show the voter dashboard, vote submission screen, MetaMask transaction confirmation, successful vote notification, voter registration and login flows, admin login, admin home, and admin election management screens for create, update, and delete operations.

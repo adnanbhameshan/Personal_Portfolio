@@ -32,7 +32,8 @@ const projectData = [
     href: "/projects/trackr",
     category: "AI/ML",
     priority: 1,
-    todoVerify: ["Confirm GitHub repository URL.", "Confirm live demo URL."],
+    githubUrl: "https://github.com/adnanbhameshan/Trackr-a-job-analyzer",
+    liveUrl: "https://job-analyzer-blue.vercel.app",
     details: {
       shortDescription:
         "A MERN job application analyzer that combines secure tracking, lifecycle management, dashboard analytics, and resume-to-job compatibility scoring.",
@@ -208,12 +209,13 @@ const projectData = [
       "Ethereum voting platform using Solidity smart contracts, MetaMask wallet authentication, and MongoDB for off-chain metadata.",
     status: "complete",
     accent: "rose",
-    tech: ["React", "Solidity", "Ethereum", "Hardhat/Truffle", "Web3.js", "Node.js", "MongoDB", "MetaMask"],
+    tech: ["React", "Solidity", "Ethereum", "Truffle", "Web3.js", "Node.js", "MongoDB", "MetaMask"],
     impact: "Demonstrates trust-minimized voting flows with on-chain vote records and off-chain election metadata.",
     href: "/projects/digivote",
     category: "Blockchain",
     priority: 2,
-    todoVerify: ["Confirm whether Hardhat, Truffle, or both were used.", "Confirm GitHub repository URL.", "Confirm live demo URL."],
+    githubUrl: "https://github.com/adnanbhameshan/DigiVote-a-voting-platform",
+    liveStatus: "Not deployed publicly - tested in a controlled college environment using a local Ethereum network.",
     details: {
       shortDescription:
         "DigiVote is a blockchain-based decentralized voting application where critical vote actions are represented as Ethereum smart contract interactions.",
@@ -239,8 +241,8 @@ const projectData = [
         },
         {
           title: "Ethereum Network",
-          subtitle: "Solidity Smart Contract",
-          description: "Owns critical vote operations such as castVote(), getResults(), and verifyVoter().",
+          subtitle: "Solidity Smart Contract + Truffle",
+          description: "Truffle supported smart contract development and local testing for critical vote operations such as castVote(), getResults(), and verifyVoter().",
         },
         {
           title: "MongoDB Backend",
@@ -251,6 +253,7 @@ const projectData = [
       technicalDecisions: [
         "Blockchain was used for the parts of the voting workflow that benefit from immutability and public verification.",
         "MetaMask was used as the authentication interface because wallet ownership and transaction signing are native Web3 primitives.",
+        "Truffle was used for smart contract development and testing in the controlled college environment.",
         "MongoDB was kept for off-chain metadata to avoid storing non-critical data on-chain and increasing gas costs.",
       ],
       challenges: [
@@ -264,12 +267,81 @@ const projectData = [
         },
       ],
       gallery: [
-        { title: "Election Setup", note: "TODO_VERIFY: Add real election configuration screenshot." },
-        { title: "Wallet Voting Flow", note: "TODO_VERIFY: Add real MetaMask voting screenshot." },
-        { title: "Results View", note: "TODO_VERIFY: Add real result tally screenshot." },
+        {
+          title: "Voter Dashboard",
+          note: "Voter-facing dashboard with navigation for dashboard access and vote casting.",
+          image: "/images/digivote/voter-dashboard.png",
+          alt: "DigiVote voter dashboard with navigation and welcome state",
+        },
+        {
+          title: "Give Vote",
+          note: "Election selection screen before a candidate is chosen.",
+          image: "/images/digivote/give-vote-empty.png",
+          alt: "DigiVote give vote form with election selector",
+        },
+        {
+          title: "MetaMask Confirmation",
+          note: "Vote submission flow routed through MetaMask on a local Ethereum network.",
+          image: "/images/digivote/metamask-confirmation.png",
+          alt: "MetaMask transfer request during DigiVote vote submission",
+        },
+        {
+          title: "Vote Submitted",
+          note: "Successful vote submission confirmation after the transaction flow.",
+          image: "/images/digivote/vote-submitted.png",
+          alt: "DigiVote vote submitted success notification",
+        },
+        {
+          title: "Voter Login",
+          note: "Role-based login flow for voter access.",
+          image: "/images/digivote/voter-login.png",
+          alt: "DigiVote voter login form",
+        },
+        {
+          title: "Voter Registration",
+          note: "Voter account registration screen.",
+          image: "/images/digivote/voter-registration.png",
+          alt: "DigiVote voter registration form",
+        },
+        {
+          title: "Admin Login",
+          note: "Admin role login screen used for election management.",
+          image: "/images/digivote/admin-login.png",
+          alt: "DigiVote admin login form",
+        },
+        {
+          title: "Admin Home",
+          note: "Admin landing screen with access to election details.",
+          image: "/images/digivote/admin-home.png",
+          alt: "DigiVote admin home screen",
+        },
+        {
+          title: "Manage Election",
+          note: "Admin election management actions for creating, updating, and deleting elections.",
+          image: "/images/digivote/manage-election.png",
+          alt: "DigiVote manage election screen",
+        },
+        {
+          title: "Create Election",
+          note: "Admin form for creating an election.",
+          image: "/images/digivote/create-election.png",
+          alt: "DigiVote create election form",
+        },
+        {
+          title: "Update Election",
+          note: "Admin form for updating election details.",
+          image: "/images/digivote/update-election.png",
+          alt: "DigiVote update election form",
+        },
+        {
+          title: "Delete Election",
+          note: "Admin form for deleting an election.",
+          image: "/images/digivote/delete-election.png",
+          alt: "DigiVote delete election form",
+        },
       ],
       futureImprovements: [
-        "Document deployment network and contract addresses.",
+        "Prepare a public demo deployment with a documented test network and contract address.",
         "Add clearer transaction status and failure-state messaging.",
         "Add automated smart contract tests if not already present.",
       ],
@@ -307,7 +379,7 @@ const projectData = [
     href: "/projects/vjit-sports-scheduler",
     category: "Full Stack",
     priority: 3,
-    liveStatus: "Not deployed - built and tested locally for a B.Tech capstone demonstration.",
+    liveStatus: "Previously had a project URL, but it is no longer active. The project is documented as an academic B.Tech capstone tested in a controlled college environment.",
     todoVerify: ["Confirm GitHub repository URL."],
     details: {
       shortDescription:
@@ -369,7 +441,8 @@ const projectData = [
         {
           title: "Deployment Status",
           items: [
-            "Not deployed to production.",
+            "Previously had a project URL, but it is no longer active.",
+            "Not currently deployed to production.",
             "Built and tested locally as a B.Tech capstone project.",
             "Demonstrated in a controlled lab environment.",
           ],
@@ -396,14 +469,60 @@ const projectData = [
         },
       ],
       gallery: [
-        { title: "Home Page", note: "TODO_VERIFY: Attach the documented landing-page screenshot." },
-        { title: "Account Registration", note: "TODO_VERIFY: Attach the documented sign-up screenshot." },
-        { title: "Secure Login", note: "TODO_VERIFY: Attach the documented sign-in screenshot." },
-        { title: "Sport Dashboard", note: "TODO_VERIFY: Attach the documented role-aware dashboard screenshot." },
-        { title: "Session Management", note: "TODO_VERIFY: Attach the documented session-list screenshot." },
-        { title: "Reports & Analytics", note: "TODO_VERIFY: Attach the documented reports screenshot." },
-        { title: "Change Password", note: "TODO_VERIFY: Attach the documented password-change screenshot." },
-        { title: "Edit Profile", note: "TODO_VERIFY: Attach the documented profile-edit screenshot." },
+        {
+          title: "Landing Page",
+          note: "Public entry point for the VJIT Sports Scheduler with sign-in and sign-up access.",
+          image: "/images/vjit-sports-scheduler/landing.png",
+          alt: "VJIT Sports Scheduler landing page with authentication links",
+        },
+        {
+          title: "Account Registration",
+          note: "Student or admin account creation form with first name, last name, email, and password fields.",
+          image: "/images/vjit-sports-scheduler/signup.png",
+          alt: "VJIT Sports Scheduler account registration screen",
+        },
+        {
+          title: "Secure Login",
+          note: "Role-aware sign-in screen for authenticated access.",
+          image: "/images/vjit-sports-scheduler/signin.png",
+          alt: "VJIT Sports Scheduler sign-in screen",
+        },
+        {
+          title: "Admin Dashboard",
+          note: "Admin dashboard showing upcoming sessions, available sports, and admin-only sport creation access.",
+          image: "/images/vjit-sports-scheduler/admin-dashboard.png",
+          alt: "VJIT Sports Scheduler admin dashboard",
+        },
+        {
+          title: "Sessions Overview",
+          note: "Session management view showing active upcoming sessions, previous sessions, and sessions created by the user.",
+          image: "/images/vjit-sports-scheduler/sessions-overview.png",
+          alt: "VJIT Sports Scheduler sessions overview",
+        },
+        {
+          title: "Reports Ranking",
+          note: "Reports view with date filtering and ranked sports according to number of sessions.",
+          image: "/images/vjit-sports-scheduler/reports-ranking.png",
+          alt: "VJIT Sports Scheduler reports ranking table",
+        },
+        {
+          title: "Popularity Chart",
+          note: "Sports popularity chart generated from participation and session data.",
+          image: "/images/vjit-sports-scheduler/reports-popularity-chart.png",
+          alt: "VJIT Sports Scheduler sports popularity chart",
+        },
+        {
+          title: "Change Password",
+          note: "Authenticated password-change workflow.",
+          image: "/images/vjit-sports-scheduler/change-password.png",
+          alt: "VJIT Sports Scheduler change password screen",
+        },
+        {
+          title: "Edit Profile",
+          note: "Profile update form for maintaining user account information.",
+          image: "/images/vjit-sports-scheduler/edit-profile.png",
+          alt: "VJIT Sports Scheduler edit profile screen",
+        },
       ],
       futureImprovements: [
         "Real-time notifications for new sessions, changes, and cancellations.",

@@ -45,7 +45,14 @@ Admins create, update, or cancel sports sessions, allocate resources, manage use
 The Reports page filters participation data by date range and presents a ranked sports table and popularity chart.
 
 ## Deployment Status
-The project is not deployed to production. It was built and tested locally and demonstrated in a controlled lab environment.
+The project previously had a project URL, but that URL is no longer active.
+
+It is not currently deployed to production. It was built and tested locally and demonstrated in a controlled lab environment.
+
+## Screenshots
+Screenshots were extracted from the final VJIT Sports Scheduler PDF documentation.
+
+Available screenshots include the landing page, account registration, sign-in, admin dashboard, sessions overview, reports ranking, sports popularity chart, change-password workflow, and edit-profile workflow.
 
 ## Future Improvements
 - Real-time notifications for new sessions, changes, and cancellations
@@ -56,5 +63,3 @@ The project is not deployed to production. It was built and tested locally and d
 
 TODO_VERIFY:
 Confirm GitHub repository URL.
-Attach the documented project screenshots.
-

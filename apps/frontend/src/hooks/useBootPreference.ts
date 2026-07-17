@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 
-const BOOT_STORAGE_KEY = "nexus.boot.skip";
+const BOOT_SESSION_KEY = "nexus.boot.seen";
 
 export function useBootPreference() {
   const prefersSkip = useMemo(() => {
@@ -8,14 +8,14 @@ export function useBootPreference() {
       return false;
     }
 
-    return window.localStorage.getItem(BOOT_STORAGE_KEY) === "true";
+    return window.sessionStorage.getItem(BOOT_SESSION_KEY) === "true";
   }, []);
 
   const [shouldBoot, setShouldBoot] = useState(!prefersSkip);
 
   const completeBoot = useCallback((skipNextTime = true) => {
     if (skipNextTime) {
-      window.localStorage.setItem(BOOT_STORAGE_KEY, "true");
+      window.sessionStorage.setItem(BOOT_SESSION_KEY, "true");
     }
 
     setShouldBoot(false);
@@ -26,4 +26,3 @@ export function useBootPreference() {
     completeBoot,
   };
 }
-

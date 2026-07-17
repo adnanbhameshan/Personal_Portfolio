@@ -4,9 +4,20 @@ import { buttonClasses } from "../components/ui/buttonStyles";
 import { Card } from "../components/ui/Card";
 import { SectionHeader } from "../components/ui/SectionHeader";
 
-// Set VITE_RESUME_URL once a resume PDF is attached. Until then the page
-// shows an honest "available upon request" state instead of a dead link.
 const resumeUrl = import.meta.env.VITE_RESUME_URL as string | undefined;
+
+const resumeOptions = [
+  {
+    label: "Software Engineering Resume",
+    href: "/resumes/adnan-bhameshan-software-engineering-resume.pdf",
+    description: "General software engineering resume for full-stack roles.",
+  },
+  {
+    label: "AI Software Engineering Resume",
+    href: "/resumes/adnan-bhameshan-ai-software-engineering-resume.pdf",
+    description: "AI-focused software engineering resume for AI and product engineering roles.",
+  },
+] as const;
 
 export function ResumePage() {
   return (
@@ -14,7 +25,7 @@ export function ResumePage() {
       <SectionHeader
         label="Resume Center"
         title="Recruiter-ready resume access."
-        description="A downloadable PDF will appear here once attached. Until then, request it directly."
+        description="Choose the resume version that best matches the role context."
       />
       <Card className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
@@ -33,17 +44,35 @@ export function ResumePage() {
             Resume PDF
           </a>
         ) : (
-          <div className="flex flex-col items-start gap-2 sm:items-end">
-            <span className="rounded-md border border-border-mid bg-elevated px-3 py-2 text-sm text-text-secondary">
-              Resume available upon request
-            </span>
-            <ButtonLink variant="ai" size="sm" to="/contact">
-              <Mail aria-hidden="true" className="h-4 w-4" />
-              Request resume
-            </ButtonLink>
-          </div>
+          <ButtonLink variant="ai" size="sm" to="/contact">
+            <Mail aria-hidden="true" className="h-4 w-4" />
+            Contact
+          </ButtonLink>
         )}
       </Card>
+
+      {!resumeUrl ? (
+        <div className="grid gap-4 md:grid-cols-2">
+          {resumeOptions.map((resume) => (
+            <Card key={resume.href} className="flex flex-col gap-4 p-5">
+              <div>
+                <h3 className="font-display text-lg font-bold text-text-primary">{resume.label}</h3>
+                <p className="mt-2 text-sm leading-6 text-text-secondary">{resume.description}</p>
+              </div>
+              <a
+                className={buttonClasses({ variant: "outline" })}
+                href={resume.href}
+                target="_blank"
+                rel="noreferrer"
+                download
+              >
+                <Download aria-hidden="true" className="h-4 w-4" />
+                Download PDF
+              </a>
+            </Card>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }

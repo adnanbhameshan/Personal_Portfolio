@@ -1,3 +1,4 @@
+import ReactMarkdown from "react-markdown";
 import { FormEvent, useRef, useState } from "react";
 import { AlertCircle, Bot, RotateCcw, Send, UserRound } from "lucide-react";
 import { suggestedPrompts } from "../../constants/ai";
@@ -57,13 +58,17 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
         signal: abortController.signal,
         onSources: (sources) => {
           setMessages((current) =>
-            current.map((message) => (message.id === assistantId ? { ...message, sources } : message)),
+            current.map((message) =>
+              message.id === assistantId ? { ...message, sources } : message,
+            ),
           );
         },
         onToken: (token) => {
           setMessages((current) =>
             current.map((message) =>
-              message.id === assistantId ? { ...message, content: message.content + token } : message,
+              message.id === assistantId
+                ? { ...message, content: message.content + token }
+                : message,
             ),
           );
         },
@@ -71,10 +76,17 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
         onDone: () => setIsStreaming(false),
       });
     } catch (caughtError) {
-      if (caughtError instanceof DOMException && caughtError.name === "AbortError") {
+      if (
+        caughtError instanceof DOMException &&
+        caughtError.name === "AbortError"
+      ) {
         return;
       }
-      setError(caughtError instanceof Error ? caughtError.message : "NEXUS AI encountered an error.");
+      setError(
+        caughtError instanceof Error
+          ? caughtError.message
+          : "NEXUS AI encountered an error.",
+      );
     } finally {
       setIsStreaming(false);
       abortRef.current = null;
@@ -100,15 +112,26 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
             <Bot aria-hidden="true" className="h-5 w-5 text-ai" />
           </div>
           <div>
-            <h2 className="font-display text-lg font-bold text-text-primary">NEXUS AI</h2>
-            <p className="text-sm text-text-secondary">Intelligent portfolio guide. No memory, no agents.</p>
+            <h2 className="font-display text-lg font-bold text-text-primary">
+              NEXUS AI
+            </h2>
+            <p className="text-sm text-text-secondary">
+              Intelligent portfolio guide. No memory, no agents.
+            </p>
           </div>
         </div>
       </div>
 
       <div className="flex-1 space-y-4 overflow-y-auto p-4">
         {messages.map((message) => (
-          <div key={message.id} className={message.role === "user" ? "flex justify-end" : "flex justify-start"}>
+          <div
+            key={message.id}
+            className={
+              message.role === "user"
+                ? "flex justify-end"
+                : "flex justify-start"
+            }
+          >
             <div
               className={`max-w-[92%] rounded-lg border p-3 ${
                 message.role === "user"
@@ -117,10 +140,18 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
               }`}
             >
               <div className="mb-2 flex items-center gap-2 font-mono text-[11px] uppercase text-text-tertiary">
-                {message.role === "user" ? <UserRound className="h-3.5 w-3.5" /> : <Bot className="h-3.5 w-3.5" />}
+                {message.role === "user" ? (
+                  <UserRound className="h-3.5 w-3.5" />
+                ) : (
+                  <Bot className="h-3.5 w-3.5" />
+                )}
                 {message.role === "user" ? "Visitor" : "NEXUS AI"}
               </div>
-              <p className="whitespace-pre-wrap text-sm leading-6">{message.content || "Thinking..."}</p>
+              <div className="prose prose-invert max-w-none text-sm">
+                <ReactMarkdown>
+                  {message.content || "Thinking..."}
+                </ReactMarkdown>
+              </div>
               {message.sources?.length ? (
                 <div className="mt-3 flex flex-wrap gap-2">
                   {message.sources.map((source) => (
@@ -140,7 +171,12 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
               <AlertCircle aria-hidden="true" className="h-4 w-4" />
               {error}
             </div>
-            <Button className="mt-3" size="sm" variant="outline" onClick={retry}>
+            <Button
+              className="mt-3"
+              size="sm"
+              variant="outline"
+              onClick={retry}
+            >
               <RotateCcw aria-hidden="true" className="h-4 w-4" />
               Retry
             </Button>
@@ -149,7 +185,13 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
       </div>
 
       <div className="border-t border-border-subtle p-4">
-        <div className={compact ? "mb-3 flex gap-2 overflow-x-auto pb-1" : "mb-3 flex flex-wrap gap-2"}>
+        <div
+          className={
+            compact
+              ? "mb-3 flex gap-2 overflow-x-auto pb-1"
+              : "mb-3 flex flex-wrap gap-2"
+          }
+        >
           {suggestedPrompts.map((prompt) => (
             <button
               key={prompt}
@@ -175,7 +217,13 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
             className="min-w-0 flex-1 rounded-md border border-border-mid bg-elevated px-3 text-sm text-text-primary placeholder:text-text-tertiary focus:border-ai"
             disabled={isStreaming}
           />
-          <Button type="submit" variant="ai" size="icon" disabled={isStreaming || input.trim().length === 0} aria-label="Send message">
+          <Button
+            type="submit"
+            variant="ai"
+            size="icon"
+            disabled={isStreaming || input.trim().length === 0}
+            aria-label="Send message"
+          >
             <Send aria-hidden="true" className="h-4 w-4" />
           </Button>
         </form>
@@ -183,4 +231,3 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
     </div>
   );
 }
-
