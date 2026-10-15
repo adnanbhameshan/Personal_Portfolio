@@ -6,10 +6,12 @@ from app.routers import ai, contact, health, resume
 
 app = FastAPI(title=settings.app_name)
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
+        "https://portfolio.adnanbhameshan.com",
     ],
     allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
