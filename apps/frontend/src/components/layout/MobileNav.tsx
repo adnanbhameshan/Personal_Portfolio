@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-import { navigationItems } from "../../constants/navigation";
+import { mobileNavigationItems, navigationItems } from "../../constants/navigation";
 import { cn } from "../../lib/cn";
 import { useUiStore } from "../../store/useUiStore";
 
@@ -12,7 +12,7 @@ export function MobileNav() {
     <>
       <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-border-subtle bg-deep/95 px-2 py-2 backdrop-blur-xl lg:hidden">
         <div className="mx-auto grid max-w-lg grid-cols-6 gap-1">
-          {navigationItems.map((item) => (
+          {mobileNavigationItems.map((item) => (
             <NavLink
               key={item.href}
               to={item.href}
@@ -72,4 +72,3 @@ export function MobileNav() {
     </>
   );
 }
-

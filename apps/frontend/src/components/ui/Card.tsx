@@ -31,7 +31,7 @@ export function Card({ className, variant = "default", accent = "blue", interact
         variant === "project" && accentStyles[accent],
         featured && "border-ai/50 shadow-[0_0_0_1px_rgba(6,182,212,0.1),var(--shadow-card)]",
         interactive &&
-          "hover:-translate-y-1 hover:border-primary/70 hover:bg-[linear-gradient(180deg,rgba(22,24,32,0.96),rgba(15,17,23,0.98))] hover:shadow-elevated focus-within:border-ai/70 motion-reduce:transform-none",
+          "hover:-translate-y-1 hover:border-primary/70 hover:bg-[var(--surface-hover)] hover:shadow-elevated focus-within:border-ai/70 motion-reduce:transform-none",
         className,
       )}
       {...props}

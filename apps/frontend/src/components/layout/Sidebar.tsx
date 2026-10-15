@@ -1,10 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import { futureNavigationItems, navigationItems } from "../../constants/navigation";
+import { navigationItems } from "../../constants/navigation";
 import { listStaggerFast, sidebarEntrance, softReveal } from "../../lib/animations";
 import { cn } from "../../lib/cn";
-import { Badge } from "../ui/Badge";
 
 export function Sidebar() {
   return (
@@ -43,32 +42,7 @@ export function Sidebar() {
           ))}
         </motion.div>
 
-        <div>
-          <div className="mb-2 flex items-center justify-between px-3">
-            <p className="font-mono text-[11px] uppercase text-text-tertiary">Future Modules</p>
-            <Badge variant="tag">V2</Badge>
-          </div>
-          <div className="space-y-1">
-            {futureNavigationItems.map((item) => (
-              <NavLink
-                key={item.href}
-                to={item.href}
-                className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm text-text-tertiary transition hover:bg-surface hover:text-text-secondary"
-              >
-                <item.icon aria-hidden="true" className="h-4 w-4" />
-                <span>{item.label}</span>
-              </NavLink>
-            ))}
-          </div>
-        </div>
       </nav>
-
-      <div className="border-t border-border-subtle p-4">
-        <div className="rounded-lg border border-border-mid bg-surface p-4">
-          <p className="font-mono text-xs text-ai">STATUS</p>
-          <p className="mt-2 text-sm font-medium text-text-primary">Open to International Opportunities</p>
-        </div>
-      </div>
     </motion.aside>
   );
 }

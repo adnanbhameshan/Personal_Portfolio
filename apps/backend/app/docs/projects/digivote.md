@@ -1,37 +1,24 @@
 # DigiVote
-source: projects/digivote.md
-category: project
-last_updated: 2026-06-21
 
 ## Summary
-DigiVote is a blockchain-based decentralized voting system built on Ethereum using Solidity smart contracts.
 
-It eliminates centralized trust requirements by storing critical vote actions on-chain, making vote records immutable and publicly verifiable.
+DigiVote is a blockchain-based voting project where critical vote actions are represented by Ethereum smart contract interactions.
 
 ## Verified Stack
-The project uses React, Solidity, Ethereum, Truffle, Web3.js, Node.js, MongoDB, and MetaMask.
 
-GitHub repository: https://github.com/adnanbhameshan/DigiVote-a-voting-platform
-
-DigiVote was not deployed as a public live demo. It was tested in a controlled college environment using a local Ethereum network.
+React, Solidity, Ethereum, Truffle, Web3.js, Node.js, MongoDB, and MetaMask.
 
 ## Architecture
-Voter Browser with MetaMask -> React Frontend -> Ethereum Network -> Solidity Smart Contract developed and tested with Truffle -> MongoDB Backend.
 
-The smart contract handles critical operations such as castVote(), getResults(), and verifyVoter().
+MetaMask provides wallet connection and transaction signing. The React interface invokes Solidity smart-contract actions through Web3.js. MongoDB holds off-chain candidate, election, and administrative metadata that does not require blockchain immutability.
 
-MongoDB stores off-chain metadata such as candidate profiles, election configuration, and admin data.
+## Engineering Focus
 
-## Authentication Flow
-Authentication is wallet-based. A voter connects MetaMask and signs blockchain transactions. The vote is submitted as an Ethereum transaction rather than a traditional session-backed form submission.
+- Smart-contract boundaries for critical voting actions
+- Wallet-based authentication and transaction signing
+- Practical division of on-chain and off-chain data
+- Local Ethereum-network testing in a controlled college environment
 
-## Blockchain Rationale
-Blockchain is useful here because votes benefit from immutability and public verification.
+## Link
 
-Not every piece of data belongs on-chain. Candidate profiles and election configuration can remain off-chain to reduce cost and complexity.
-
-## Lessons
-The project demonstrates smart contract boundaries, wallet authentication UX, and the tradeoff between on-chain trust and off-chain practicality.
-
-## Screenshots
-The available screenshots show the voter dashboard, vote submission screen, MetaMask transaction confirmation, successful vote notification, voter registration and login flows, admin login, admin home, and admin election management screens for create, update, and delete operations.
+Repository: https://github.com/adnanbhameshan/DigiVote-a-voting-platform

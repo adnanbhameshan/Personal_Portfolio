@@ -14,21 +14,15 @@ Design balance:
 - 70% professional SaaS product
 - 30% futuristic command center
 
-## MVP Scope
+## Current Scope
 
-Phase 1 builds the product foundation only:
-- Folder structure
-- Design system
-- Tailwind configuration
-- Theme tokens
-- Routing
-- Layout architecture
-- Sidebar
-- Topbar
-- Reusable UI components
-- Responsive foundation
+NEXUS now combines the product foundation with connected portfolio content:
+- Folder structure, design system, Tailwind configuration, theme tokens, routing, and layout architecture
+- Sidebar, topbar, mobile navigation, reusable UI components, and responsive foundation
+- Dashboard, projects, NEXUS AI, resume, contact, about, experience, certifications, skills, GitHub, and technical journey pages
+- RAG-backed portfolio assistant, Markdown knowledge base, contact submission fallback, resume variants, and deployment metadata
 
-Future MVP phases add complete page content, RAG-backed AI, contact submission, resume download tracking, and deployment hardening.
+Future work should focus on analytics, admin tooling, additional observability, and deployment hardening.
 
 ## Folder Structure
 
@@ -82,7 +76,12 @@ Primary routes:
 - `/resume`
 - `/contact`
 - `/about`
-- Future placeholders: `/skills`, `/github`, `/aws-journey`, `/certifications`
+- `/experience`
+- `/skills`
+- `/github`
+- `/journey`
+- `/aws-journey` redirects to `/journey`
+- `/certifications`
 
 Layout:
 - `AppShell` owns the persistent dashboard chrome
@@ -98,7 +97,7 @@ Core stack:
 - Python 3.12
 - PostgreSQL
 - pgvector
-- OpenAI-compatible API
+- Gemini and OpenAI-compatible API support with local keyword fallback
 
 V1 API routes:
 - `GET /api/health`
@@ -120,7 +119,7 @@ User question
   -> embedding generation
   -> pgvector similarity search
   -> context retrieval
-  -> OpenAI-compatible chat completion
+  -> Gemini or OpenAI-compatible chat completion, with local fallback when no LLM key is configured
   -> answer with source references
 ```
 
@@ -130,7 +129,7 @@ Knowledge sources:
 - Skills
 - Certifications
 
-The MVP avoids conversation memory, agent workflows, multi-step planning, multi-user features, and admin ingestion UI.
+NEXUS intentionally avoids persistent personal memory, autonomous agent workflows, multi-user features, and admin ingestion UI.
 
 ## Database Schema
 
@@ -212,7 +211,11 @@ App
         ResumePage
         ContactPage
         AboutPage
-        FuturePlaceholderPage
+        ExperiencePage
+        SkillsPage
+        GitHubPage
+        JourneyPage
+        CertificationsPage
 ```
 
 ## Implementation Roadmap
@@ -221,5 +224,4 @@ App
 2. Phase 2: complete Dashboard, Projects Index, Project Detail pages, Resume, Contact, About content.
 3. Phase 3: FastAPI RAG implementation, knowledge ingestion, pgvector retrieval, AI panel.
 4. Phase 4: deployment, Docker, Neon/Render/Vercel configuration, accessibility and device QA.
-5. Phase 5: future pages such as GitHub Intelligence, AWS Journey, Certifications Hub, analytics, and admin.
-
+5. Phase 5: analytics, admin tooling, and further deployment hardening.

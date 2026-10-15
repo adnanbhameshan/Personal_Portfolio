@@ -2,14 +2,28 @@ from fastapi import APIRouter
 
 router = APIRouter(tags=["resume"])
 
+RESUME_VERSIONS = {
+    "full-stack": {
+        "label": "Full-Stack Developer Resume",
+        "url": "/resumes/adnan-ahmed-full-stack-developer-resume.pdf",
+    },
+    "cloud-support": {
+        "label": "Cloud Support Engineer Resume",
+        "url": "/resumes/adnan-ahmed-cloud-support-engineer-resume.pdf",
+    },
+    "it-operations": {
+        "label": "IT Operations Resume",
+        "url": "/resumes/adnan-ahmed-it-operations-resume.pdf",
+    },
+}
+
 
 @router.get("/download")
-async def download_resume(version: str = "standard") -> dict[str, str]:
-    # No resume PDF is attached yet. Once one is added (and served via a
-    # static URL or object storage), this endpoint should redirect or
-    # stream it instead of returning this status payload.
+async def download_resume(version: str = "full-stack") -> dict[str, str]:
+    selected = RESUME_VERSIONS.get(version, RESUME_VERSIONS["full-stack"])
     return {
-        "status": "unavailable",
+        "status": "available",
         "version": version,
-        "message": "Resume available upon request via the contact form.",
+        "label": selected["label"],
+        "url": selected["url"],
     }

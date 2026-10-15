@@ -14,37 +14,32 @@ import {
   listStagger,
   listStaggerFast,
   pressTap,
-  progressFill,
   softReveal,
 } from "../lib/animations";
 
 const stats = [
   {
     label: "Portfolio Projects",
-    value: "3",
-    description: "Full-stack, AI-integrated, and blockchain builds with complete engineering documentation.",
+    value: "5",
+    description: "AI, cloud infrastructure, full-stack, blockchain, and academic engineering builds with documentation.",
   },
   {
     label: "Technologies Used",
-    value: "33+",
-    description: "Verified across frontend, backend, database, AI/NLP, and blockchain layers.",
+    value: "40+",
+    description: "Verified across frontend, backend, database, AI/NLP, cloud infrastructure, and blockchain layers.",
   },
   {
-    label: "Currently Pursuing",
+    label: "AWS Credential",
     value: "AWS SAA-C03",
-    description: "Cloud architecture, IAM, compute, storage, and resilient system design.",
+    description: "AWS Certified Solutions Architect – Associate.",
   },
 ];
 
-// Skill tiers are based on verified project usage — no percentage estimates.
-// "Built in projects" = used across 2+ documented projects.
-// "Implemented" = used in at least one documented project with real code.
-// "Actively studying" = in progress, not yet in a shipped project.
 const skills = [
-  { label: "Full-Stack Engineering (Node.js · Express · React · FastAPI)", tier: "Built across 3 projects", width: 88, tone: "bg-primary" },
-  { label: "Auth & Security (Passport.js · JWT · bcrypt · CSRF)", tier: "Implemented in 2 projects", width: 76, tone: "bg-ai" },
-  { label: "AI / NLP Integration (TF-IDF · Cosine Similarity · RAG)", tier: "Implemented in Trackr & NEXUS", width: 70, tone: "bg-success" },
-  { label: "AWS Cloud Architecture (SAA-C03)", tier: "Actively studying", width: 38, tone: "bg-amber" },
+  { label: "Full-Stack Engineering", tier: "React · Node.js · FastAPI" },
+  { label: "Secure Application Workflows", tier: "JWT · bcrypt · Passport.js · CSRF" },
+  { label: "AI / NLP Integration", tier: "TF-IDF · Cosine Similarity · RAG" },
+  { label: "AWS Architecture", tier: "Certified Solutions Architect – Associate" },
 ];
 
 export function DashboardPage() {
@@ -52,23 +47,23 @@ export function DashboardPage() {
     <motion.div className="space-y-10" variants={listStagger} initial="initial" animate="animate">
       <motion.section className="grid gap-8 py-4 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start lg:gap-10 lg:py-8" variants={softReveal}>
         <motion.div className="max-w-4xl" variants={softReveal}>
-          <StatusPill label="Open to Relocation · Dubai, UAE" location="IT / Cloud / DevOps" />
+          <StatusPill label="Dubai, UAE" location="Full Stack Development" />
           <div className="mt-8">
             <SectionHeader
               label="Developer Intelligence Activated"
-              title="Adnan Ahmed Bhameshan — Full-Stack & Cloud-Focused Engineer."
-              description="Targeting IT Support, Cloud Support, System Administration, and Junior DevOps roles in Dubai. AWS SAA-C03 in progress."
+              title="Adnan Ahmed Bhameshan — Full Stack Developer."
+              description="React · TypeScript · Node.js · FastAPI · AWS Certified. Building practical systems across software, AI, and cloud infrastructure."
             />
           </div>
         </motion.div>
         <motion.div variants={cardEntrance} whileHover={hoverLift} whileTap={pressTap}>
           <Card className="p-4 lg:mt-3" interactive featured>
             <p className="font-mono text-[11px] uppercase text-ai">Featured Project</p>
-            <h2 className="mt-2 font-display text-xl font-bold">Trackr</h2>
+            <h2 className="mt-2 font-display text-xl font-bold">NEXUS — AI Developer Command Center</h2>
             <p className="mt-2 text-sm leading-6 text-text-secondary">
-              Secure job tracking, pipeline analytics, and a separate FastAPI matching service.
+              AI-powered portfolio platform with FastAPI, RAG, streaming responses, and grounded project intelligence.
             </p>
-            <ButtonLink className="mt-4 w-full" variant="ai" size="sm" to="/projects/trackr">
+            <ButtonLink className="mt-4 w-full" variant="ai" size="sm" to="/projects/nexus-ai-developer-command-center">
               View Project
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </ButtonLink>
@@ -104,7 +99,7 @@ export function DashboardPage() {
                 accent={project.accent}
                 className="h-full p-5"
                 interactive
-                featured={project.slug === "trackr"}
+                featured={project.status === "featured"}
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
@@ -137,21 +132,14 @@ export function DashboardPage() {
       <motion.section className="space-y-4" variants={softReveal}>
         <div>
           <p className="font-mono text-xs uppercase text-ai">Capability Signal</p>
-          <h2 className="mt-2 font-display text-2xl font-bold">Skill Momentum</h2>
+          <h2 className="mt-2 font-display text-2xl font-bold">Capability Snapshot</h2>
         </div>
         <Card className="grid gap-5 p-5" interactive>
           {skills.map((skill) => (
             <div key={skill.label}>
               <div className="flex items-start justify-between gap-4">
                 <p className="text-sm font-medium text-text-primary">{skill.label}</p>
-                <span className="shrink-0 font-mono text-xs text-text-tertiary">{skill.tier}</span>
-              </div>
-              <div className="mt-2 h-2 overflow-hidden rounded-full bg-elevated">
-                <motion.div
-                  className={`h-full origin-left rounded-full ${skill.tone}`}
-                  style={{ width: `${skill.width}%` }}
-                  variants={progressFill}
-                />
+                <span className="min-w-0 text-right font-mono text-xs text-text-tertiary">{skill.tier}</span>
               </div>
             </div>
           ))}

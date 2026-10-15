@@ -7,6 +7,7 @@ import { useUiStore } from "../../store/useUiStore";
 import { Button } from "../ui/Button";
 import { ButtonLink } from "../ui/ButtonLink";
 import { StatusPill } from "../ui/StatusPill";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Topbar() {
   const location = useLocation();
@@ -30,14 +31,15 @@ export function Topbar() {
               {activeItem?.label ?? "NEXUS"}
             </p>
             <p className="hidden truncate text-xs text-text-secondary sm:block">
-              Adnan Ahmed Bhameshan / Full Stack and AI Engineer
+              Adnan Ahmed Bhameshan / Full Stack Developer
             </p>
           </div>
         </div>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <StatusPill label="Available" location="Remote" />
-          <ButtonLink to="/assistant" variant="ai" size="sm">
+        <div className="flex items-center gap-1 md:gap-3">
+          <ThemeToggle />
+          <div className="hidden md:block"><StatusPill label="Available" location="Dubai, UAE" /></div>
+          <ButtonLink className="hidden md:inline-flex" to="/assistant" variant="ai" size="sm">
             <Bot aria-hidden="true" className="h-4 w-4" />
             Ask NEXUS AI
           </ButtonLink>

@@ -11,7 +11,7 @@ export function AssistantPage() {
         <SectionHeader
           label="NEXUS AI"
           title="An intelligent portfolio guide for faster evaluation."
-          description="Ask focused questions about Adnan's projects, skills, technologies, AWS learning path, and role fit."
+          description="Ask focused questions about Adnan's projects, skills, technologies, AWS infrastructure, resume versions, and role fit."
         />
       </motion.div>
       <motion.div variants={cardEntrance}>

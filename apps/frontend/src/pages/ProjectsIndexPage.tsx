@@ -8,7 +8,7 @@ import { SectionHeader } from "../components/ui/SectionHeader";
 import { projects } from "../data/projects";
 import { cardEntrance, listStaggerFast, softReveal } from "../lib/animations";
 
-const filters = ["All", "AI/ML", "Blockchain", "Full Stack", "React", "Node.js", "FastAPI"];
+const filters = ["All", "AI/ML", "Cloud", "Blockchain", "Full Stack", "React", "Node.js", "FastAPI"];
 
 export function ProjectsIndexPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -76,7 +76,7 @@ export function ProjectsIndexPage() {
       <motion.div className="grid gap-4" variants={listStaggerFast}>
         {filteredProjects.map((project, index) => (
           <motion.div key={project.slug} variants={cardEntrance}>
-            <Card variant="project" accent={project.accent} className="p-5" interactive featured={project.slug === "trackr"}>
+            <Card variant="project" accent={project.accent} className="p-5" interactive featured={project.status === "featured"}>
               <div className="grid gap-5 lg:grid-cols-[72px_1fr_180px] lg:items-center">
                 <div>
                   <p className="font-mono text-xs uppercase text-text-tertiary">Priority</p>

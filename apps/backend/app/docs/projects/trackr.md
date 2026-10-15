@@ -1,83 +1,62 @@
-# Trackr - Job Analyzer
-source: projects/trackr.md
-category: project
-last_updated: 2026-06-21
+# Trackr
 
 ## Summary
-Trackr is a full-stack job application analyzer that transforms manual job tracking into a structured, analytical workflow.
 
-It centralizes job applications, supports lifecycle CRUD operations, visualizes pipeline and conversion metrics, and uses secure JWT authentication. Its Resume Analyzer and Job Matching Engine compares resume content with a target job description using TF-IDF and Cosine Similarity.
+Trackr is a full-stack job application analyzer and tracker. It centralizes job applications, lifecycle CRUD workflows, dashboard analytics, and resume-to-job matching in one product flow.
 
-## Main Application Architecture
-Trackr follows a three-tier client-server architecture using the MERN stack.
+## Problem
 
-The presentation layer uses React 19 with Vite, Tailwind CSS, React Router DOM v7, Recharts, Axios, and Lucide React.
+Job seekers often track applications across spreadsheets, emails, job boards, and manually saved resume versions. This makes it difficult to understand pipeline status, follow-ups, and whether a resume aligns with a role description.
 
-The application layer uses Node.js and Express.js for business logic, JWT authentication, API handling, and validation.
+## Solution
 
-The data layer uses MongoDB Atlas with Mongoose schemas.
+Trackr provides an authenticated dashboard where users can save job opportunities, manage application status, review analytics, and compare a resume against a job description using a dedicated Python matching service.
 
-## Verified Technology Stack
-Frontend: React 19, Vite, Tailwind CSS, React Router DOM v7, Recharts, Axios, and Lucide React.
+## Verified Stack
 
-Backend: Node.js, Express.js, Mongoose, JWT, bcryptjs, CORS, Cookie-parser, and Nodemailer.
+- Frontend: React 19, Vite, Tailwind CSS, React Router DOM v7, Recharts, Axios, and Lucide React
+- Application backend: Node.js, Express.js, Mongoose, MongoDB Atlas, JWT, and bcryptjs
+- Matching service: FastAPI and Python
+- Matching algorithm: pure-Python TF-IDF and cosine similarity
 
-NLP service: FastAPI, Python, TF-IDF Vectorization, and Cosine Similarity.
+## Architecture
 
-Deployment: Vercel for the frontend, Render for the backend, and MongoDB Atlas for the database.
+The React client owns the user interface, protected routes, job workflow screens, and analytics views. The Express API handles authentication, authorization, protected job CRUD endpoints, and database operations through Mongoose. MongoDB stores users and job records. A separate FastAPI service owns resume analysis, text preprocessing, and matching so the Python workload remains isolated from the main Node.js API.
 
-GitHub repository: https://github.com/adnanbhameshan/Trackr-a-job-analyzer
+## Authentication and Data Access
 
-Live frontend: https://job-analyzer-blue.vercel.app
+- Users authenticate through JWT-based sessions.
+- Passwords are hashed with bcryptjs.
+- Protected job APIs are scoped to the authenticated user.
+- Application records are isolated per user instead of shared globally.
 
-## Authentication Flow
-Trackr uses JWT for stateless authentication.
+## Job Management Workflow
 
-The user submits credentials, the backend validates them, and a JWT is returned to the client. The client stores the token in a cookie or localStorage and includes it with future requests. Protected API calls verify the token before granting access.
+Trackr supports core job application lifecycle actions:
 
-Passwords are hashed with bcryptjs.
+- Add and update job applications
+- Track company, role, status, and application details
+- Move applications through status stages
+- Review dashboard analytics through chart-based summaries
+- Keep application data centralized for follow-up planning
 
-Authentication endpoints:
-- POST /register
-- POST /login
-- POST /logout
-- GET /profile
+## Resume Analyzer
 
-## Job Management and Analytics
-Users can create, view, update, and delete job applications.
+The resume analyzer compares resume content against a job description. The matching service tokenizes text, uses unigrams and bigrams, calculates TF-IDF vectors, and returns cosine similarity output as a compatibility signal.
 
-Job endpoints:
-- GET /jobs
-- POST /jobs
-- PUT /jobs/:id
-- DELETE /jobs/:id
-- GET /jobs/dashboard
+The implementation is documented as a pure-Python TF-IDF and cosine similarity workflow. It does not depend on scikit-learn.
 
-The dashboard displays total applications, interviews, offers, rejections, application-pipeline charts, interview rate, success rate, and recent activity.
+## Engineering Decisions
 
-## Database Design
-MongoDB has two primary collections managed through Mongoose.
+- React and Vite keep the frontend fast and modular.
+- Express and Mongoose provide a familiar REST API layer over MongoDB.
+- JWT and bcryptjs keep authentication practical for a portfolio-grade product.
+- FastAPI separates Python-based NLP logic from the Node.js application backend.
+- Recharts turns stored application records into recruiter-friendly dashboard analytics.
 
-Users fields: _id, name, unique email, hashed password, and timestamps.
+## Links
 
-Jobs fields: _id, user reference, company, position, status, and timestamps.
+- Repository: https://github.com/adnanbhameshan/Trackr-a-job-analyzer
+- Live frontend: https://job-analyzer-blue.vercel.app
 
-Documented job statuses are Applied, Offer, Interview, and Rejected.
-
-## Resume Analyzer and Job Matching Engine
-The user uploads a resume and provides a target job description. The system extracts and processes the resume content, cleans both documents, and transforms them into machine-readable vectors with TF-IDF.
-
-Cosine Similarity measures alignment between the resume and job description. The platform returns a compatibility score showing how closely the candidate profile matches the role.
-
-The FastAPI NLP layer is separate from the Express application backend so AI operations remain maintainable and can scale independently.
-
-## Future Enhancements
-- Skill gap analysis
-- Resume improvement suggestions
-- AI-generated interview preparation tips
-- Job recommendation engine
-- Transformer-based semantic matching
-- Automatic job scraping from LinkedIn and Naukri
-- Email alerts and reminders
-- OAuth through Google or LinkedIn
-
+Deployment details beyond the available links should not be inferred from source code alone.

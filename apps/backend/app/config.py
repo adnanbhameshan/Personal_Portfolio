@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     ]
 
     database_url: str | None = None
-    contact_email: str | None = None
+    contact_email: str | None = "adnanbhameshan@gmail.com"
 
     gemini_api_key: str | None = None
     gemini_chat_model: str = "gemini-2.5-flash"

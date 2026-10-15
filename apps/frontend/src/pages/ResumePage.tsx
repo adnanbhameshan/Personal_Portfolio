@@ -1,21 +1,23 @@
-import { Download, Mail } from "lucide-react";
-import { ButtonLink } from "../components/ui/ButtonLink";
+import { Download, ExternalLink } from "lucide-react";
 import { buttonClasses } from "../components/ui/buttonStyles";
 import { Card } from "../components/ui/Card";
 import { SectionHeader } from "../components/ui/SectionHeader";
 
-const resumeUrl = import.meta.env.VITE_RESUME_URL as string | undefined;
-
 const resumeOptions = [
   {
-    label: "Software Engineering Resume",
-    href: "/resumes/adnan-bhameshan-software-engineering-resume.pdf",
-    description: "General software engineering resume for full-stack roles.",
+    label: "Full-Stack Developer Resume",
+    href: "/resumes/adnan-ahmed-full-stack-developer-resume.pdf",
+    description: "Targets React, TypeScript, Node.js, Express.js, FastAPI, AI/RAG, APIs, databases, and full-stack product delivery.",
   },
   {
-    label: "AI Software Engineering Resume",
-    href: "/resumes/adnan-bhameshan-ai-software-engineering-resume.pdf",
-    description: "AI-focused software engineering resume for AI and product engineering roles.",
+    label: "Cloud Support Engineer Resume",
+    href: "/resumes/adnan-ahmed-cloud-support-engineer-resume.pdf",
+    description: "Targets AWS, cloud infrastructure, Linux, networking, troubleshooting, monitoring, Terraform, Docker, and CI/CD support.",
+  },
+  {
+    label: "IT Operations Resume",
+    href: "/resumes/adnan-ahmed-it-operations-resume.pdf",
+    description: "Targets IT operations, application and service support, incident triage, monitoring, AWS, Linux, and cloud infrastructure.",
   },
 ] as const;
 
@@ -30,49 +32,39 @@ export function ResumePage() {
       <Card className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h2 className="font-display text-xl font-bold">Adnan Ahmed Bhameshan</h2>
-          <p className="mt-1 text-sm text-text-secondary">Full Stack and AI Engineer</p>
+          <p className="mt-1 text-sm text-text-secondary">Three focused resume versions for different role families.</p>
         </div>
-        {resumeUrl ? (
-          <a
-            className={buttonClasses({ variant: "outline" })}
-            href={resumeUrl}
-            target="_blank"
-            rel="noreferrer"
-            download
-          >
-            <Download aria-hidden="true" className="h-4 w-4" />
-            Resume PDF
-          </a>
-        ) : (
-          <ButtonLink variant="ai" size="sm" to="/contact">
-            <Mail aria-hidden="true" className="h-4 w-4" />
-            Contact
-          </ButtonLink>
-        )}
       </Card>
 
-      {!resumeUrl ? (
-        <div className="grid gap-4 md:grid-cols-2">
-          {resumeOptions.map((resume) => (
-            <Card key={resume.href} className="flex flex-col gap-4 p-5">
-              <div>
-                <h3 className="font-display text-lg font-bold text-text-primary">{resume.label}</h3>
-                <p className="mt-2 text-sm leading-6 text-text-secondary">{resume.description}</p>
-              </div>
+      <div className="grid gap-4 lg:grid-cols-3">
+        {resumeOptions.map((resume) => (
+          <Card key={resume.href} className="flex flex-col gap-4 p-5">
+            <div className="flex-1">
+              <h3 className="font-display text-lg font-bold text-text-primary">{resume.label}</h3>
+              <p className="mt-2 text-sm leading-6 text-text-secondary">{resume.description}</p>
+            </div>
+            <div className="flex flex-wrap gap-3">
               <a
-                className={buttonClasses({ variant: "outline" })}
+                className={buttonClasses({ variant: "outline", size: "sm" })}
                 href={resume.href}
                 target="_blank"
                 rel="noreferrer"
+              >
+                <ExternalLink aria-hidden="true" className="h-4 w-4" />
+                View
+              </a>
+              <a
+                className={buttonClasses({ variant: "ai", size: "sm" })}
+                href={resume.href}
                 download
               >
                 <Download aria-hidden="true" className="h-4 w-4" />
-                Download PDF
+                Download
               </a>
-            </Card>
-          ))}
-        </div>
-      ) : null}
+            </div>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }

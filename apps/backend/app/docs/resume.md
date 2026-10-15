@@ -1,134 +1,31 @@
-# Resume
+# Resume Summary
 
-source: resume.md
-category: resume
-last_updated: 2026-06-23
+## Professional Profile
 
-## Professional Summary
+Adnan Ahmed Bhameshan is a Full Stack Developer based in Dubai, UAE. His resume set is intentionally split into three role-focused versions: Full-Stack Developer, Cloud Support Engineer, and IT Operations / IT Support.
 
-Adnan Ahmed Bhameshan is a Cloud-Focused Full Stack Engineer based in Hyderabad, India.
+## Professional Experience
 
-He specializes in building complete software systems that combine modern frontend development, backend services, databases, authentication, and AI-assisted workflows. His work emphasizes practical engineering, system design, documentation, and continuous learning.
+### SAHL Business Solutions — Full Stack Developer
 
-Adnan is currently expanding his expertise in cloud computing, infrastructure, automation, and DevOps while pursuing international opportunities in software engineering and cloud-focused roles.
+- Period: February 2025 to July 2026
+- Employment location: Hyderabad, India
+- Focus: Full-stack web applications, React, Node.js, FastAPI, RESTful APIs, JWT and bcrypt authentication, MongoDB, PostgreSQL, Python-based AI services, Tailwind CSS, AWS, Vercel, Render, GitHub, and CI/CD.
 
-## Core Strengths
+## Resume Versions
 
-* Full Stack Application Development
-* Backend API Design
-* Database Design and Data Modelling
-* Authentication and Security Workflows
-* Cloud Computing Fundamentals
-* AI and NLP Integration
-* Technical Documentation
-* Problem Solving and Troubleshooting
+- Full-Stack Developer Resume: emphasizes React, TypeScript, Node.js, Express.js, FastAPI, REST APIs, AI/RAG, databases, authentication, deployment, and full-stack application delivery.
+- Cloud Support Engineer Resume: emphasizes AWS, EC2, S3, IAM, RDS, VPC, Security Groups, Linux, networking, CloudWatch, Terraform, Docker, GitHub Actions, troubleshooting, and cloud infrastructure support.
+- IT Operations Resume: emphasizes IT operations, application and service support, incident triage, root-cause investigation, monitoring, AWS, Linux, cloud infrastructure, deployment, and CI/CD workflows.
 
-## Technical Snapshot
+## Portfolio Evidence
 
-### Frontend
+- NEXUS: React and TypeScript AI Developer Command Center with FastAPI, SSE streaming, Gemini 2.5 Flash, RAG, Markdown knowledge retrieval, PostgreSQL/pgvector where configured, and a grounded AI portfolio assistant.
+- Cloud Infrastructure Platform: AWS and Terraform project covering VPC, public/private subnets, route tables, EC2, Application Load Balancer, RDS PostgreSQL, S3, IAM, Security Groups, CloudWatch, Docker, GitHub Actions, and CI/CD.
+- Trackr: Job application platform with React, Express, MongoDB, JWT authentication, analytics, and a separate FastAPI pure-Python TF-IDF/cosine service.
+- DigiVote: Ethereum voting project using Solidity, MetaMask, Web3.js, Truffle, React, Node.js, and MongoDB.
+- VJIT Sports Scheduler: Role-based Node.js and Express project using PostgreSQL, Sequelize, EJS, Passport.js, bcrypt, and CSRF protection.
 
-* React
-* TypeScript
-* JavaScript
-* Vite
-* Tailwind CSS
+## Credential
 
-### Backend
-
-* Node.js
-* Express.js
-* FastAPI
-* Sequelize
-* REST API Development
-
-### Databases
-
-* MongoDB
-* PostgreSQL
-
-### Cloud & Infrastructure
-
-* AWS (SAA-C03 Learning Path)
-* Linux Fundamentals
-* Networking Fundamentals
-* Cloud Architecture Concepts
-
-### Developer Tools
-
-* Git
-* GitHub
-* VS Code
-
-## Portfolio Evaluation Summary
-
-Recruiters evaluating Adnan should focus on four major engineering demonstrations:
-
-### NEXUS
-
-AI-powered developer portfolio and command center combining:
-
-* React Frontend Engineering
-* FastAPI Backend Services
-* Retrieval-Augmented Generation (RAG)
-* AI Assistant Integration
-* Knowledge Base Architecture
-* Product Design and Documentation
-
-NEXUS represents Adnan's strongest demonstration of end-to-end engineering ownership.
-
-### Trackr
-
-Job Application Analyzer demonstrating:
-
-* MERN Architecture
-* JWT Authentication
-* MongoDB Modelling
-* Dashboard Analytics
-* FastAPI-Based NLP Services
-* Resume Matching Workflows
-
-### DigiVote
-
-Blockchain-based voting platform demonstrating:
-
-* Solidity Smart Contracts
-* Truffle-Based Contract Testing
-* Wallet Authentication
-* Decentralized Application Concepts
-* Blockchain Architecture Fundamentals
-
-### VJIT Sports Scheduler
-
-Role-based sports management platform demonstrating:
-
-* PostgreSQL and Sequelize
-* Passport.js Authentication
-* CSRF Protection
-* Session Management
-* Reporting and Analytics
-
-## Professional Characteristics
-
-Adnan is known for:
-
-* Fast learning and adaptability
-* Strong attention to detail
-* Practical problem solving
-* Documentation and knowledge sharing
-* Technical curiosity
-* Accuracy and integrity
-
-He prefers learning through implementation and project-building rather than theory alone, following a personal philosophy of combining approximately 30% theory with 70% hands-on application.
-
-## Availability
-
-Based in Hyderabad, India.
-
-Open to:
-
-* Relocation Worldwide
-* International Opportunities
-* Cloud Engineering Roles
-* Software Engineering Roles
-* IT and Technical Support Roles
-* Remote Opportunities
+AWS Certified Solutions Architect – Associate, issued July 25, 2026 and valid until July 25, 2029.

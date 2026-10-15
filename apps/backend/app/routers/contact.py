@@ -79,8 +79,8 @@ async def submit_contact(payload: ContactSubmission, request: Request) -> Contac
     return ContactResponse(
         status="fallback",
         message=(
-            "Your message could not be stored automatically right now. "
-            "Please reach out directly using the contact details below."
+            "The direct message store is not available in this environment. "
+            "Please use the direct email below and include your name, email, and message."
         ),
         fallback_contact=(
             FallbackContact(email=settings.contact_email) if settings.contact_email else None

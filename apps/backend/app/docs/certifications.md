@@ -1,174 +1,63 @@
-# Certifications & Professional Development
+# Certifications and Credentials
 
-source: certifications.md
-category: certifications
-last_updated: 2026-06-23
+## Certifications
 
-## Overview
+### AWS Certified Solutions Architect – Associate
 
-Adnan Ahmed Bhameshan believes continuous learning and practical implementation go hand in hand.
+- Status: Certified
+- Exam: SAA-C03
+- Issued: July 25, 2026
+- Expires: July 25, 2029
+- Validation number: c6aa0324cde04484a41525db066ff4c7
+- Verification: https://aws.amazon.com/verification
 
-His professional development journey combines certifications, internships, self-directed learning, and project-based experience across software engineering, cloud computing, data science, cybersecurity, and emerging technologies.
+### Nutanix Certified Professional – Multicloud Infrastructure 6
 
----
+- Status: Completed
+- Issued: December 27, 2025
 
-## Current Certification Goal
+## Technical Credentials
 
-### AWS Certified Solutions Architect – Associate (SAA-C03)
+### Google Advanced Data Analytics Capstone
 
-Status: In Progress
+- Provider: Google / Coursera
+- Completed: September 19, 2025
+- Verification: https://coursera.org/verify/CC077Q4NYDF4
 
-Current focus areas include:
+### React Front-End Development
 
-* AWS IAM
-* EC2
-* S3
-* RDS
-* VPC
-* Cloud Security
-* High Availability
-* Fault Tolerance
-* Cloud Architecture Best Practices
+- Provider: HackerRank
+- Earned: September 7, 2024
+- Credential ID: F17CB7EEE532
 
-This certification aligns with Adnan's long-term goal of growing into cloud engineering, platform engineering, and solutions architecture roles.
+### Cybersecurity Essentials
 
----
+- Provider: Cisco Networking Academy
+- Completed: May 16, 2024
 
-## Technical Certifications
+### PCAP: Programming Essentials in Python
 
-### Programming Essentials in Python
+- Provider: Cisco Networking Academy / OpenEDG Python Institute
+- Completed: July 8, 2023
 
-Provider: Cisco Networking Academy
+### Programming Essentials in C++
 
-Skills Developed:
+- Provider: Cisco Networking Academy / C++ Institute
+- Completed: May 28, 2023
+- Note: This is a course-completion technical credential, not a C++ Certified Associate Programmer certification.
 
-* Python Fundamentals
-* Programming Logic
-* Problem Solving
-* Functions and Data Structures
-* Object-Oriented Concepts
+## Achievement
 
----
+### Technical Quiz – 2nd Prize
 
-### Introduction to Cybersecurity
+- Event: Technocrat 2023
+- Conducted: September 14, 2023
 
-Provider: Cisco Networking Academy
+## Additional Qualification
 
-Skills Developed:
+### IELTS Academic
 
-* Cybersecurity Fundamentals
-* Threat Awareness
-* Security Principles
-* Risk Management Concepts
-* Secure Computing Practices
-
----
-
-### Front-End Developer Certification
-
-Provider: HackerRank
-
-Skills Demonstrated:
-
-* HTML
-* CSS
-* JavaScript
-* Frontend Development Fundamentals
-* Problem Solving
-
----
-
-## Professional Internships
-
-### Salesforce Developer Internship
-
-Duration: Completed
-
-Key Exposure:
-
-* Salesforce Ecosystem
-* CRM Concepts
-* Application Customization
-* Platform Development
-* Business Process Automation
-
----
-
-### Data Science Internship
-
-Provider: SkillCraft Technology
-
-Duration: Completed
-
-Key Exposure:
-
-* Data Analysis
-* Data Visualization
-* Machine Learning Fundamentals
-* Python-Based Data Workflows
-* Real-World Dataset Exploration
-
----
-
-## Language & Communication
-
-### IELTS
-
-Status: Completed
-
-Demonstrates:
-
-* Professional English Communication
-* Reading
-* Writing
-* Listening
-* Speaking
-
-This supports Adnan's readiness for international academic and professional environments.
-
----
-
-## Cloud & Infrastructure Learning
-
-### Nutanix Learning Path
-
-Exposure Areas:
-
-* Cloud Infrastructure Concepts
-* Virtualization Fundamentals
-* Enterprise Infrastructure
-* Hybrid Cloud Concepts
-
-TODO_VERIFY:
-Confirm exact Nutanix certification title and completion status.
-
----
-
-## Learning Philosophy
-
-Adnan treats certifications as validation of learning rather than the final goal.
-
-His preferred approach is:
-
-1. Learn the fundamentals.
-2. Build practical projects.
-3. Apply knowledge in real scenarios.
-4. Validate understanding through certifications where relevant.
-
-This approach allows him to combine theoretical understanding with practical implementation.
-
----
-
-## Areas of Ongoing Development
-
-Adnan is actively investing in:
-
-* AWS Cloud Computing
-* Linux Administration
-* Networking Fundamentals
-* DevOps Tooling
-* Infrastructure Automation
-* System Design
-* Cloud Architecture
-
-These areas support his progression toward cloud engineering and platform-focused career paths.
+- Test date: June 7, 2025
+- Overall Band: 6.5
+- CEFR: B2
+- Note: IELTS is an English-language qualification, not a technical certification.

@@ -15,6 +15,8 @@
     color-scheme: dark;
   }
 
+  html[data-theme="light"] { color-scheme: light; }
+
   body {
     min-width: 320px;
     min-height: 100vh;
@@ -47,6 +49,23 @@
     outline-offset: 3px;
   }
 }
+
+.nexus-prose {
+  max-width: 46rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.nexus-prose :where(h1, h2, h3, h4) { color: var(--text-primary); font-family: "Space Grotesk", Inter, sans-serif; line-height: 1.25; }
+.nexus-prose :where(h1, h2) { margin: 1.2em 0 0.45em; font-size: 1.15em; }
+.nexus-prose h3 { margin: 1em 0 0.35em; font-size: 1.02em; }
+.nexus-prose p { margin: 0.65em 0; }
+.nexus-prose :where(ul, ol) { margin: 0.65em 0; padding-left: 1.25rem; }
+.nexus-prose li { margin: 0.3em 0; padding-left: 0.15rem; }
+.nexus-prose strong { color: var(--text-primary); font-weight: 600; }
+.nexus-prose a { color: var(--ai-primary); text-decoration: underline; text-underline-offset: 3px; }
+.nexus-prose :where(code:not(pre code)) { border: 1px solid var(--border-mid); border-radius: 4px; background: var(--bg-elevated); color: var(--text-primary); padding: 0.1rem 0.3rem; font-size: 0.86em; }
+.nexus-prose pre { overflow-x: auto; border: 1px solid var(--border-mid); border-radius: 8px; background: var(--bg-deep); color: var(--text-primary); padding: 0.9rem; }
+.nexus-prose pre code { color: inherit; background: transparent; padding: 0; }
 
 .preboot {
   display: grid;
@@ -86,4 +105,3 @@
     transition-duration: 0.01ms !important;
   }
 }
-

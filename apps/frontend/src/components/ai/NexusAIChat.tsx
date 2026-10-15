@@ -2,7 +2,7 @@ import ReactMarkdown from "react-markdown";
 import { FormEvent, useRef, useState } from "react";
 import { AlertCircle, Bot, RotateCcw, Send, UserRound } from "lucide-react";
 import { suggestedPrompts } from "../../constants/ai";
-import { streamNexusChat } from "../../lib/api";
+import { streamNexusChat, type ChatHistoryMessage } from "../../lib/api";
 import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
 
@@ -21,7 +21,7 @@ const welcomeMessage: Message = {
   id: "welcome",
   role: "assistant",
   content:
-    "Ask me about Adnan's projects, skills, career goals, AWS learning path, or which project best demonstrates his engineering judgment.",
+    "Ask me about Adnan's projects, skills, cloud infrastructure, resume versions, career goals, or which project best demonstrates his engineering judgment.",
 };
 
 export function NexusAIChat({ compact = false }: NexusAIChatProps) {
@@ -40,6 +40,10 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
     }
 
     const assistantId = crypto.randomUUID();
+    const history: ChatHistoryMessage[] = messages
+      .filter((message) => message.id !== "welcome" && message.content.trim())
+      .slice(-6)
+      .map(({ role, content }) => ({ role, content }));
     lastQuestionRef.current = trimmed;
     setInput("");
     setError(null);
@@ -74,7 +78,7 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
         },
         onError: (message) => setError(message),
         onDone: () => setIsStreaming(false),
-      });
+      }, history);
     } catch (caughtError) {
       if (
         caughtError instanceof DOMException &&
@@ -147,7 +151,7 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
                 )}
                 {message.role === "user" ? "Visitor" : "NEXUS AI"}
               </div>
-              <div className="prose prose-invert max-w-none text-sm">
+              <div className="nexus-prose max-w-none text-sm">
                 <ReactMarkdown>
                   {message.content || "Thinking..."}
                 </ReactMarkdown>
@@ -213,7 +217,7 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
             id="nexus-ai-input"
             value={input}
             onChange={(event) => setInput(event.target.value)}
-            placeholder="Ask about Trackr, skills, AWS, or project decisions..."
+            placeholder="Ask about NEXUS, Trackr, AWS infrastructure, skills, or project decisions..."
             className="min-w-0 flex-1 rounded-md border border-border-mid bg-elevated px-3 text-sm text-text-primary placeholder:text-text-tertiary focus:border-ai"
             disabled={isStreaming}
           />

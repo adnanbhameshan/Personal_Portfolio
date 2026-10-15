@@ -9,8 +9,10 @@ type SubmitState =
   | { kind: "idle" }
   | { kind: "submitting" }
   | { kind: "stored"; message: string }
-  | { kind: "fallback"; message: string; email: string | null }
+  | { kind: "fallback"; message: string; email: string }
   | { kind: "error"; message: string };
+
+const directEmail = "adnanbhameshan@gmail.com";
 
 export function ContactPage() {
   const [name, setName] = useState("");
@@ -59,12 +61,13 @@ export function ContactPage() {
       setSubmitState({
         kind: "fallback",
         message: data.message,
-        email: data.fallback_contact?.email ?? null,
+        email: data.fallback_contact?.email ?? directEmail,
       });
     } catch {
       setSubmitState({
-        kind: "error",
-        message: "Could not reach the server. Please check your connection and try again.",
+        kind: "fallback",
+        message: "The contact API is not reachable from this environment. Please use the direct email below and include your name, email, and message.",
+        email: directEmail,
       });
     }
   };
@@ -129,15 +132,9 @@ export function ContactPage() {
             <AlertTriangle aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0" />
             <div>
               <p>{submitState.message}</p>
-              {submitState.email ? (
-                <a className="mt-2 inline-block font-medium underline" href={`mailto:${submitState.email}`}>
-                  {submitState.email}
-                </a>
-              ) : (
-                <p className="mt-2 font-mono text-xs text-text-tertiary">
-                  TODO_VERIFY: direct contact email not yet configured.
-                </p>
-              )}
+              <a className="mt-2 inline-block font-medium underline" href={`mailto:${submitState.email}`}>
+                {submitState.email}
+              </a>
             </div>
           </div>
         ) : null}

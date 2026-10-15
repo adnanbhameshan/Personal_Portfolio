@@ -4,11 +4,15 @@ import { AboutPage } from "../pages/AboutPage";
 import { AssistantPage } from "../pages/AssistantPage";
 import { ContactPage } from "../pages/ContactPage";
 import { DashboardPage } from "../pages/DashboardPage";
-import { FuturePlaceholderPage } from "../pages/FuturePlaceholderPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
 import { ProjectDetailPage } from "../pages/ProjectDetailPage";
 import { ProjectsIndexPage } from "../pages/ProjectsIndexPage";
 import { ResumePage } from "../pages/ResumePage";
+import { SkillsPage } from "../pages/SkillsPage";
+import { ExperiencePage } from "../pages/ExperiencePage";
+import { CertificationsPage } from "../pages/CertificationsPage";
+import { GitHubPage } from "../pages/GitHubPage";
+import { JourneyPage } from "../pages/JourneyPage";
 
 export function AppRoutes() {
   return (
@@ -18,17 +22,18 @@ export function AppRoutes() {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/projects" element={<ProjectsIndexPage />} />
         <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+        <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/assistant" element={<AssistantPage />} />
         <Route path="/resume" element={<ResumePage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/skills" element={<FuturePlaceholderPage title="Skills Intelligence" />} />
-        <Route path="/github" element={<FuturePlaceholderPage title="GitHub Intelligence" />} />
-        <Route path="/aws-journey" element={<FuturePlaceholderPage title="AWS Journey" />} />
-        <Route path="/certifications" element={<FuturePlaceholderPage title="Certifications Hub" />} />
+        <Route path="/skills" element={<SkillsPage />} />
+        <Route path="/github" element={<GitHubPage />} />
+        <Route path="/journey" element={<JourneyPage />} />
+        <Route path="/aws-journey" element={<Navigate to="/journey" replace />} />
+        <Route path="/certifications" element={<CertificationsPage />} />
       </Route>
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }
-

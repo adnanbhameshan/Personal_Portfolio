@@ -20,8 +20,8 @@ const highlights = [
   },
   {
     icon: Cloud,
-    title: "Cloud Learning — AWS SAA-C03",
-    body: "Actively studying for the AWS Solutions Architect Associate certification, covering EC2, S3, RDS, IAM, VPC, and cloud architecture patterns including high availability and resilient system design.",
+    title: "AWS Certified — SAA-C03",
+    body: "AWS Certified Solutions Architect – Associate, with a verified foundation in cloud architecture, security, availability, and resilient system design.",
   },
 ];
 
@@ -30,8 +30,8 @@ export function AboutPage() {
     <div className="space-y-6">
       <SectionHeader
         label="About"
-        title="Practical engineering. Cloud-ready direction."
-        description="Full-stack engineer targeting cloud support, IT support, system administration, and junior DevOps roles in Dubai."
+        title="Practical engineering. Full-stack delivery."
+        description="Full Stack Developer based in Dubai, UAE."
       />
 
       <Card className="p-5">
@@ -43,9 +43,8 @@ export function AboutPage() {
           and role-based access control with PostgreSQL in VJIT Sports Scheduler.
         </p>
         <p className="mt-4 leading-7 text-text-secondary">
-          He is currently studying for the AWS Solutions Architect Associate (SAA-C03) certification and
-          targeting international opportunities in Dubai across cloud support, IT support, system
-          administration, and junior DevOps engineering.
+          He is an AWS Certified Solutions Architect – Associate and brings a cloud-aware engineering
+          perspective to software delivery, API design, authentication, data systems, and applied AI workflows.
         </p>
       </Card>
 

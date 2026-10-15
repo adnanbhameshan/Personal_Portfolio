@@ -89,8 +89,8 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
               <p className="mt-1 text-text-primary">Full Stack Engineer · AI Developer</p>
             </div>
             <div>
-              <p className="text-[11px] uppercase text-text-tertiary">Status</p>
-              <p className="mt-1 text-text-primary">Open to International Opportunities</p>
+              <p className="text-[11px] uppercase text-text-tertiary">Location</p>
+              <p className="mt-1 text-text-primary">Dubai, UAE</p>
             </div>
           </div>
           <p className="text-sm text-ai">ACCESS GRANTED</p>

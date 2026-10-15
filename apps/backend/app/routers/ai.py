@@ -9,8 +9,14 @@ from app.services.rag_service import RetrievedChunk, rag_service
 router = APIRouter(tags=["ai"])
 
 
+class ChatHistoryMessage(BaseModel):
+    role: str = Field(pattern="^(user|assistant)$")
+    content: str = Field(min_length=1, max_length=2000)
+
+
 class ChatRequest(BaseModel):
     question: str = Field(min_length=1, max_length=1000)
+    history: list[ChatHistoryMessage] = Field(default_factory=list, max_length=6)
 
 
 class ChatResponse(BaseModel):
@@ -25,9 +31,9 @@ async def ai_health() -> dict[str, str | int | bool]:
 
 @router.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest) -> ChatResponse:
-    chunks = await rag_service.retrieve(request.question)
+    chunks = await rag_service.retrieve_for_intent(request.question, request.history)
     answer_parts = [
-        token async for token in rag_service.stream_answer(request.question, chunks)
+        token async for token in rag_service.stream_answer(request.question, chunks, request.history)
     ]
     return ChatResponse(
         answer="".join(answer_parts).strip(),
@@ -37,12 +43,12 @@ async def chat(request: ChatRequest) -> ChatResponse:
 
 @router.post("/chat/stream")
 async def stream_chat(request: ChatRequest) -> StreamingResponse:
-    chunks = await rag_service.retrieve(request.question)
+    chunks = await rag_service.retrieve_for_intent(request.question, request.history)
 
     async def event_stream():
         yield _sse("sources", {"sources": _unique_sources(chunks)})
         try:
-            async for token in rag_service.stream_answer(request.question, chunks):
+            async for token in rag_service.stream_answer(request.question, chunks, request.history):
                 yield _sse("token", {"content": token})
             yield _sse("done", {"ok": True})
         except Exception as exc:

@@ -25,7 +25,7 @@ export function ProjectDetailPage() {
       </ButtonLink>
 
       <motion.section variants={softReveal}>
-        <Card variant="project" accent={project.accent} className="p-6 md:p-8" featured={project.slug === "trackr"}>
+        <Card variant="project" accent={project.accent} className="p-6 md:p-8" featured={project.status === "featured"}>
           <div className="grid gap-8 lg:grid-cols-[1fr_280px]">
             <div>
               <div className="flex flex-wrap items-center gap-2">
@@ -59,7 +59,7 @@ export function ProjectDetailPage() {
                 </a>
               ) : (
                 <div className="rounded-md border border-border-mid bg-elevated px-3 py-3 text-sm text-text-secondary">
-                  TODO_VERIFY: GitHub repository URL.
+                  Repository link not currently published.
                 </div>
               )}
               {project.liveUrl ? (
@@ -78,7 +78,7 @@ export function ProjectDetailPage() {
                 </div>
               ) : (
                 <div className="rounded-md border border-border-mid bg-elevated px-3 py-3 text-sm text-text-secondary">
-                  TODO_VERIFY: Live demo URL.
+                  Live demo link not currently published.
                 </div>
               )}
             </div>
@@ -238,7 +238,7 @@ export function ProjectDetailPage() {
             ))}
             {project.todoVerify?.map((item) => (
               <p key={item} className="font-mono text-xs leading-6 text-amber">
-                TODO_VERIFY: {item.replace(/^TODO_VERIFY:\s*/, "")}
+                Verification pending: {item}
               </p>
             ))}
           </Card>

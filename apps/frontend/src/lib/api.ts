@@ -8,14 +8,19 @@ export interface StreamChatHandlers {
   signal?: AbortSignal;
 }
 
-export async function streamNexusChat(question: string, handlers: StreamChatHandlers) {
+export interface ChatHistoryMessage {
+  role: "user" | "assistant";
+  content: string;
+}
+
+export async function streamNexusChat(question: string, handlers: StreamChatHandlers, history: ChatHistoryMessage[] = []) {
   const response = await fetch(`${API_BASE_URL}/api/ai/chat/stream`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Accept: "text/event-stream",
     },
-    body: JSON.stringify({ question }),
+    body: JSON.stringify({ question, history }),
     signal: handlers.signal,
   });
 
@@ -66,4 +71,3 @@ export async function streamNexusChat(question: string, handlers: StreamChatHand
     }
   }
 }
-

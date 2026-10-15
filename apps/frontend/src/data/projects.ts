@@ -2,6 +2,276 @@ import type { Project } from "../types/project";
 
 const projectData = [
   {
+    slug: "nexus-ai-developer-command-center",
+    name: "NEXUS — AI Developer Command Center",
+    eyebrow: "AI-powered developer portfolio and command center",
+    summary:
+      "A React, TypeScript, and FastAPI portfolio platform with streaming NEXUS AI, grounded Markdown knowledge retrieval, and role-focused project intelligence.",
+    status: "featured",
+    accent: "cyan",
+    tech: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Zustand",
+      "TanStack Query",
+      "FastAPI",
+      "Python",
+      "SSE",
+      "Gemini 2.5 Flash",
+      "RAG",
+      "Semantic Retrieval",
+      "PostgreSQL",
+      "pgvector",
+    ],
+    impact: "Turns a static portfolio into a grounded evaluation surface that can answer questions about projects, skills, experience, architecture, and credentials.",
+    href: "/projects/nexus-ai-developer-command-center",
+    category: "AI/ML",
+    priority: 1,
+    liveUrl: "https://portfolio.adnanbhameshan.com",
+    liveStatus: "Live portfolio platform with local development and production deployment paths documented separately.",
+    details: {
+      shortDescription:
+        "NEXUS is an AI-powered developer command center that combines a polished portfolio UI, FastAPI services, streaming AI responses, and a Markdown-backed knowledge base for grounded recruiter and technical evaluation.",
+      problem: [
+        "Traditional portfolios force recruiters and technical reviewers to manually connect projects, skills, experience, certifications, and architecture decisions.",
+        "An AI portfolio assistant needs grounding so it can answer questions naturally without inventing facts or exposing unsupported claims.",
+      ],
+      solution: [
+        "NEXUS organizes project intelligence, resume context, certifications, experience, skills, GitHub highlights, and a technical learning journey into one command-center interface.",
+        "NEXUS AI uses bounded chat history, Markdown rendering, retrieval over structured knowledge files, and streaming responses to answer portfolio questions.",
+        "The platform differentiates role-focused resume versions and keeps frontend project data consistent with the backend Markdown knowledge base.",
+      ],
+      architecture: [
+        {
+          title: "React Command Center",
+          subtitle: "React + TypeScript + Vite",
+          description: "Renders the dashboard, project case studies, NEXUS AI, resume center, contact, certifications, GitHub, skills, experience, and journey modules.",
+        },
+        {
+          title: "FastAPI Backend",
+          subtitle: "Python + REST + SSE",
+          description: "Exposes health, contact, resume, and AI chat endpoints, including streaming responses for the assistant.",
+        },
+        {
+          title: "Knowledge Layer",
+          subtitle: "Markdown + Retrieval",
+          description: "Loads structured Markdown documents, chunks them by heading, and retrieves relevant portfolio context for grounded answers.",
+        },
+        {
+          title: "AI Generation",
+          subtitle: "Gemini 2.5 Flash + LLM APIs",
+          description: "Uses prompt engineering, semantic context, and bounded recent conversation history to produce concise Markdown answers.",
+        },
+      ],
+      systemDetails: [
+        {
+          title: "Frontend",
+          items: [
+            "React, TypeScript, Vite, Tailwind CSS, Framer Motion, Zustand, TanStack Query, React Router, and ReactMarkdown.",
+            "Dark and light themes use the existing NEXUS token system with localStorage preference support.",
+            "Responsive layout includes desktop sidebar, mobile navigation, and a browser-tested learning journey.",
+          ],
+        },
+        {
+          title: "Backend and AI",
+          items: [
+            "FastAPI exposes REST routes and SSE streaming chat responses.",
+            "NEXUS AI supports greetings, bounded follow-up context, Markdown output, local fallback answers, and RAG for portfolio questions.",
+            "The repository includes optional pgvector retrieval paths when PostgreSQL and embeddings are configured.",
+          ],
+        },
+        {
+          title: "Cloud Context",
+          items: [
+            "Resume source material describes production operation across Vercel, Render, Neon PostgreSQL, and an AWS migration path using EC2, S3, IAM, and RDS.",
+            "Repository code is the source of truth for implemented app behavior; cloud service claims are limited to documented resume and project context.",
+          ],
+        },
+      ],
+      technicalDecisions: [
+        "Markdown knowledge files keep portfolio facts reviewable and easy to update without hiding core claims inside prompts.",
+        "Streaming responses make the assistant feel responsive while preserving the existing FastAPI backend architecture.",
+        "Bounded follow-up context avoids persistent memory while still resolving references such as 'it' or 'there' in recent conversation.",
+        "ReactMarkdown and custom NEXUS prose styling allow structured answers without forcing generic chat formatting.",
+      ],
+      challenges: [
+        {
+          challenge: "Preventing AI answers from drifting away from verified portfolio information.",
+          solution: "Use structured Markdown knowledge retrieval, explicit system boundaries, local fallback behavior, and direct grounded answers for high-risk factual questions.",
+        },
+        {
+          challenge: "Adding AI without disrupting the portfolio's polished visual identity.",
+          solution: "Keep the existing command-center design language, token system, Framer Motion patterns, and responsive shell.",
+        },
+      ],
+      gallery: [
+        {
+          title: "Dashboard Command Center",
+          note: "Main recruiter-facing surface for identity, project intelligence, and quick access to NEXUS modules.",
+        },
+        {
+          title: "NEXUS AI",
+          note: "Streaming portfolio assistant with Markdown answers, bounded follow-up context, and knowledge-grounded responses.",
+        },
+        {
+          title: "Technical Journey",
+          note: "Scroll-driven chapter interface with progressive line drawing and chapter unlocking.",
+        },
+      ],
+      futureImprovements: [
+        "Advanced AI capabilities over richer project intelligence.",
+        "Deeper analytics around recruiter journeys and project evaluation.",
+        "Additional integrations where they add meaningful portfolio context.",
+      ],
+      lessons: [
+        "AI portfolio assistants need source discipline as much as model capability.",
+        "A polished portfolio can behave like a product surface without becoming visually noisy.",
+        "Small validation loops matter when AI, routing, data, and UI all depend on each other.",
+      ],
+      workflow: [
+        "Visitor opens a NEXUS module",
+        "Visitor asks NEXUS AI a focused portfolio question",
+        "Backend resolves intent and recent follow-up context",
+        "Relevant Markdown knowledge is retrieved",
+        "The assistant streams a grounded Markdown answer",
+      ],
+    },
+  },
+  {
+    slug: "cloud-infrastructure-platform",
+    name: "Cloud Infrastructure Platform — AWS & Terraform",
+    eyebrow: "Production-style AWS infrastructure with infrastructure as code",
+    summary:
+      "A multi-tier AWS infrastructure project using Terraform, Linux, VPC networking, EC2, RDS PostgreSQL, S3, IAM, CloudWatch, Docker, and GitHub Actions.",
+    status: "complete",
+    accent: "green",
+    tech: [
+      "AWS",
+      "Terraform",
+      "Linux",
+      "VPC",
+      "EC2",
+      "RDS PostgreSQL",
+      "S3",
+      "IAM",
+      "Security Groups",
+      "CloudWatch",
+      "Docker",
+      "GitHub Actions",
+      "Application Load Balancer",
+      "CI/CD",
+    ],
+    impact: "Demonstrates cloud infrastructure design, repeatable provisioning, secure networking, monitoring, containerization, and deployment automation.",
+    href: "/projects/cloud-infrastructure-platform",
+    category: "Cloud",
+    priority: 2,
+    liveStatus: "Infrastructure project documented from resume source material; public live endpoint is not listed in this repository.",
+    details: {
+      shortDescription:
+        "A production-style AWS infrastructure platform that provisions networking, compute, database, storage, security, monitoring, containerization, and CI/CD workflows with Terraform and supporting cloud tooling.",
+      problem: [
+        "Manual cloud setup is difficult to repeat, review, troubleshoot, and secure as environments become more complex.",
+        "A production-style application environment needs clear boundaries between public access, private data services, security controls, monitoring, and deployment automation.",
+      ],
+      solution: [
+        "Provision a multi-tier AWS environment with Terraform, including VPC networking, public and private subnets, route tables, security groups, and controlled application-to-database connectivity.",
+        "Deploy EC2, Application Load Balancer, RDS PostgreSQL, S3, IAM, CloudWatch, Docker, and GitHub Actions to support application hosting, monitoring, and CI/CD.",
+        "Use infrastructure-as-code practices so infrastructure can be reviewed, repeated, and improved instead of manually recreated.",
+      ],
+      architecture: [
+        {
+          title: "Terraform",
+          subtitle: "Infrastructure as Code",
+          description: "Defines the AWS environment, networking, security, compute, database, and supporting services as repeatable configuration.",
+        },
+        {
+          title: "AWS Network Layer",
+          subtitle: "VPC + Subnets + Route Tables",
+          description: "Separates public and private infrastructure paths and controls network routing for application and database components.",
+        },
+        {
+          title: "Application Layer",
+          subtitle: "ALB + EC2 + Docker",
+          description: "Supports containerized application services behind load-balanced access and health checks.",
+        },
+        {
+          title: "Data and Operations",
+          subtitle: "RDS PostgreSQL + S3 + CloudWatch",
+          description: "Provides managed relational data, object storage, metrics, logs, alarms, and troubleshooting visibility.",
+        },
+      ],
+      systemDetails: [
+        {
+          title: "AWS Services",
+          items: [
+            "VPC, public/private subnets, route tables, EC2, Application Load Balancer, RDS PostgreSQL, S3, IAM, Security Groups, and CloudWatch.",
+            "Security groups and IAM are used to constrain access and service permissions.",
+            "CloudWatch metrics, logs, and alarms support monitoring, incident triage, and root-cause investigation.",
+          ],
+        },
+        {
+          title: "Delivery Workflow",
+          items: [
+            "Docker containerizes application services.",
+            "GitHub Actions supports automated testing, image builds, and deployment workflow automation.",
+            "Terraform modules and remote state are included in the resume source material; repository implementation should be treated as the final source if added later.",
+          ],
+        },
+      ],
+      technicalDecisions: [
+        "Terraform was used to make infrastructure repeatable and reviewable rather than manually configured.",
+        "Public/private subnet separation supports a clearer trust boundary between internet-facing services and private data components.",
+        "RDS PostgreSQL provides a managed relational database layer for production-style workloads.",
+        "CloudWatch monitoring supports operations work such as alerting, troubleshooting, and root-cause investigation.",
+      ],
+      challenges: [
+        {
+          challenge: "Designing secure application-to-database connectivity without exposing private resources unnecessarily.",
+          solution: "Use VPC boundaries, public/private subnet separation, route tables, and security groups to control traffic paths.",
+        },
+        {
+          challenge: "Keeping cloud provisioning consistent across iterations.",
+          solution: "Use Terraform and CI/CD practices so infrastructure changes can be repeated and reviewed.",
+        },
+      ],
+      gallery: [
+        {
+          title: "Infrastructure Topology",
+          note: "Multi-tier AWS architecture with network, compute, database, security, and monitoring layers.",
+        },
+        {
+          title: "Terraform Workflow",
+          note: "Infrastructure-as-code workflow for repeatable provisioning and environment updates.",
+        },
+        {
+          title: "Operations View",
+          note: "CloudWatch-backed monitoring and troubleshooting context for infrastructure operations.",
+        },
+      ],
+      futureImprovements: [
+        "Publish a sanitized architecture diagram and public repository reference when available.",
+        "Add documented runbooks for deployment, rollback, monitoring, and incident response.",
+        "Extend observability with richer dashboards if the project is productionized further.",
+      ],
+      lessons: [
+        "Infrastructure design is strongest when networking, security, monitoring, and deployment are treated together.",
+        "Infrastructure as code improves repeatability and reduces manual configuration drift.",
+        "Cloud support work benefits from the same debugging discipline used in application engineering.",
+      ],
+      workflow: [
+        "Plan infrastructure changes with Terraform",
+        "Provision VPC, subnets, routing, and security groups",
+        "Deploy compute, load balancing, database, and storage services",
+        "Containerize services with Docker",
+        "Run CI/CD through GitHub Actions",
+        "Monitor metrics, logs, and alarms in CloudWatch",
+      ],
+    },
+  },
+  {
     slug: "trackr",
     name: "Trackr",
     eyebrow: "Full-stack job application analyzer",
@@ -31,7 +301,7 @@ const projectData = [
     impact: "Turns manual application tracking into a secure, analytical workflow with a dedicated NLP matching capability.",
     href: "/projects/trackr",
     category: "AI/ML",
-    priority: 1,
+    priority: 3,
     githubUrl: "https://github.com/adnanbhameshan/Trackr-a-job-analyzer",
     liveUrl: "https://job-analyzer-blue.vercel.app",
     details: {
@@ -213,7 +483,7 @@ const projectData = [
     impact: "Demonstrates trust-minimized voting flows with on-chain vote records and off-chain election metadata.",
     href: "/projects/digivote",
     category: "Blockchain",
-    priority: 2,
+    priority: 4,
     githubUrl: "https://github.com/adnanbhameshan/DigiVote-a-voting-platform",
     liveStatus: "Not deployed publicly - tested in a controlled college environment using a local Ethereum network.",
     details: {
@@ -378,7 +648,7 @@ const projectData = [
     impact: "Replaces spreadsheet, physical-record, and notice-board coordination with role-aware scheduling and participation analytics.",
     href: "/projects/vjit-sports-scheduler",
     category: "Full Stack",
-    priority: 3,
+    priority: 5,
     liveStatus: "Previously had a project URL, but it is no longer active. The project is documented as an academic B.Tech capstone tested in a controlled college environment.",
     todoVerify: ["Confirm GitHub repository URL."],
     details: {
