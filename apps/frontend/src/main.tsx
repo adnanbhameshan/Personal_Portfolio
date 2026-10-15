@@ -24,3 +24,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   </React.StrictMode>,
 );
 
+const savedTheme = window.localStorage.getItem("nexus.theme");
+const initialTheme = savedTheme === "dark" ? "dark" : "light";
+
+document.documentElement.dataset.theme = initialTheme;
+document.documentElement.style.colorScheme = initialTheme;

@@ -1,10 +1,11 @@
 import ReactMarkdown from "react-markdown";
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { AlertCircle, Bot, RotateCcw, Send, UserRound } from "lucide-react";
 import { suggestedPrompts } from "../../constants/ai";
 import { streamNexusChat, type ChatHistoryMessage } from "../../lib/api";
 import { Badge } from "../ui/Badge";
 import { Button } from "../ui/Button";
+
 
 interface Message {
   id: string;
@@ -31,6 +32,15 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
   const [error, setError] = useState<string | null>(null);
   const lastQuestionRef = useRef<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+
+useEffect(() => {
+  const container = messagesEndRef.current;
+  if (container) {
+    container.scrollTop = container.scrollHeight;
+  }
+}, [messages]);
 
   const submitQuestion = async (question: string) => {
     const trimmed = question.trim();
@@ -126,7 +136,9 @@ export function NexusAIChat({ compact = false }: NexusAIChatProps) {
         </div>
       </div>
 
-      <div className="flex-1 space-y-4 overflow-y-auto p-4">
+      <div 
+      ref={messagesEndRef}
+      className="flex-1 space-y-4 overflow-y-auto p-4">
         {messages.map((message) => (
           <div
             key={message.id}
